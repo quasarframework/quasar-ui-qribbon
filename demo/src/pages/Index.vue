@@ -27,6 +27,10 @@
           <marquee>Let's Marquee!</marquee>
         </q-ribbon>
       </div>
+
+      <div class="ribbon-wrapper">
+        <q-ribbon class="q-my-sm q-mr-md" color="red" background-color="yellow">Hippy Ribbon</q-ribbon>
+      </div>
     </q-card>
   </q-page>
 </template>

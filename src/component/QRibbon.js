@@ -6,8 +6,13 @@ import './ribbon.styl'
 // Utils
 import slot from 'quasar/src/utils/slot.js'
 
+// Mixins
+import Colorize from './mixins/colorize'
+
 export default Vue.extend({
   name: 'QRibbon',
+  
+  mixins: [ Colorize ],
   
   props: {
     right: Boolean,
@@ -28,10 +33,14 @@ export default Vue.extend({
     return h('section', {
       class: 'relative'
     }, [
-      h('div', {
+      h('div', this.setBothColors(this.color, this.backgroundColor, {
         staticClass: 'qribbon',
-        class: this.positionClass
-      }, slot(this, 'default'))
+        class: {
+          'right': this.right,
+          'full': this.full,
+          'left': !this.right && !this.full
+        }
+      }), slot(this, 'default'))
     ])
   }
   

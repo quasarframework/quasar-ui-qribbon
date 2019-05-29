@@ -8,11 +8,17 @@ export default Vue.extend({
   name: 'colorize',
   
   props: {
-    color: String
+    color: {
+      type: String,
+      default: 'white'
+    },
+    backgroundColor: {
+      type: String,
+      default: 'blue'
+    }
   },
   
   methods: {
-    
     setBothColors (color, bgColor, data = {}) {
       return this.setTextColor(color, this.setBackgroundColor(bgColor, data))
     },
@@ -30,6 +36,7 @@ export default Vue.extend({
           ...data.class,
           ['bg-' + colorName]: true
         }
+        console.log(data.class)
       }
       
       return data
@@ -51,6 +58,5 @@ export default Vue.extend({
       }
       return data
     }
-    
   }
 })
