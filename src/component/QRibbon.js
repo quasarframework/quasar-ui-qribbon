@@ -16,7 +16,8 @@ export default Vue.extend({
   
   props: {
     right: Boolean,
-    full: Boolean
+    full: Boolean,
+    inverted: Boolean
   },
   
   computed: {
@@ -38,7 +39,8 @@ export default Vue.extend({
         class: {
           'right': this.right,
           'full': this.full,
-          'left': !this.right && !this.full
+          'left': !this.right && !this.full,
+          'inverted': this.inverted
         }
       }), slot(this, 'default'))
     ])

@@ -1,70 +1,97 @@
+$qribbon-width = 10px
+$qribbon-negative-width = -($qribbon-width)
+$qribbon-height = 0px
+
+.__base-qribbon-pseudo-before-after
+  width $qribbon-width
+  height $qribbon-height
+  bottom $qribbon-negative-width
+  border-top $qribbon-width solid transparent
+  display block
+  position absolute
+  content ""
+  background inherit
+  color white
+
+.__base-qribbon-pseudo-left
+  @extend .__base-qribbon-pseudo-before-after
+  border-left $qribbon-width solid
+  left 0
+
+.__base-qribbon-pseudo-right
+  @extend .__base-qribbon-pseudo-before-after
+  border-right $qribbon-width solid
+  right 0
+
+.__base-qribbon-pseudo-inverted
+  border none
+  border-bottom $qribbon-width solid transparent
+  background white
+  color inherit
+
+.__base-qribbon-pseudo-left-inverted
+  @extend .__base-qribbon-pseudo-left, .__base-qribbon-pseudo-inverted
+  border-right $qribbon-width solid
+  left 0
+
+.__base-qribbon-pseudo-right-inverted
+  @extend .__base-qribbon-pseudo-right, .__base-qribbon-pseudo-inverted
+  border-left $qribbon-width solid
+  right 0
+
+.__base-qribbon-left
+  margin-left $qribbon-negative-width
+  left 0
+
+.__base-qribbon-right
+  margin-right $qribbon-negative-width
+  right 0
+
 .qribbon
   position absolute
   padding 5px 12px
   left 0
   
   &.left
-    margin-left -10px
-    
+    @extend .__base-qribbon-left
+
     &::before
-      display block
-      width 10px
-      height 0px
-      position absolute
-      bottom -10px
-      left 0
-      content ""
-      border-top 10px solid transparent
-      border-left 10px solid
-      background inherit
-      color white
-  
+      @extend .__base-qribbon-pseudo-left
+
+  &.left.inverted
+    @extend .__base-qribbon-left
+
+    &::before
+      @extend .__base-qribbon-pseudo-left-inverted
+
   &.right
-    margin-right -10px
-    right 0
+    @extend .__base-qribbon-right
     left inherit
     
     &::before
-      display block
-      width 10px
-      height 0px
-      position absolute
-      bottom -10px
-      right 0
-      content ""
-      border-top 10px solid transparent
-      border-right 10px solid
-      background inherit
-      color white
-  
-  &.full
-    margin-right -10px
-    margin-left -10px
-    right 0
-    left 0
-    
+      @extend .__base-qribbon-pseudo-right
+
+  &.right.inverted
+    @extend .__base-qribbon-right
+    left inherit
+
     &::before
-      display block
-      width 10px
-      height 0px
-      position absolute
-      bottom -10px
-      right 0
-      content ""
-      border-top 10px solid transparent
-      border-right 10px solid
-      background inherit
-      color white
-    
+      @extend .__base-qribbon-pseudo-right-inverted
+
+  &.full
+    @extend .__base-qribbon-left, .__base-qribbon-right
+
+    &::before
+      @extend .__base-qribbon-pseudo-left
+
     &::after
-      display block
-      width 10px
-      height 0px
-      position absolute
-      bottom -10px
-      left 0
-      content ""
-      border-top 10px solid transparent
-      border-left 10px solid
-      background inherit
-      color white
+      @extend .__base-qribbon-pseudo-right
+
+  &.full.inverted
+    @extend .__base-qribbon-left, .__base-qribbon-right
+
+    &::before
+      @extend .__base-qribbon-pseudo-left-inverted
+
+    &::after
+      @extend .__base-qribbon-pseudo-right-inverted
