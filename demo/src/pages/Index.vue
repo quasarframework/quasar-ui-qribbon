@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <q-card class="q-py-xs flat bordered" style="width: 500px;">
+    <q-card class="q-py-xs flat bordered" style="width: 75%">
       <div class="ribbon-wrapper">
         <q-ribbon class="q-my-sm q-mr-md">Left Ribbon (default)</q-ribbon>
       </div>
