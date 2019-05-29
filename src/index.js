@@ -14,7 +14,7 @@ const extendConf = function (conf) {
   conf.build.transpileDependencies.push(/quasar-app-extension-qribbon[\\/]src/)
 
   // make sure qjumbotron css goes through webpack to avoid ssr issues
-  conf.css.push('~quasar-app-extension-qribbon/src/component/QRibbon.styl')
+  conf.css.push('~quasar-app-extension-qribbon/src/component/ribbon.styl')
   console.log(` App Extension (qribbon) Info: 'Adding ribbon.styl css reference to your quasar.conf.js'`)
 }
 
