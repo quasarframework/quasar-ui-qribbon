@@ -1,0 +1,65 @@
+.qribbon
+  color #fff
+  position absolute
+  background rgb(0, 164, 239)
+  padding 5px 12px
+  left 0
+  
+  &.left
+    margin-left -10px
+    
+    &::before
+      display block
+      width 10px
+      height 0px
+      position absolute
+      bottom -10px
+      left 0
+      content ""
+      border-bottom 10px solid transparent
+      border-right 10px solid rgb(0, 80, 116)
+  
+  &.right
+    margin-right -10px
+    right 0
+    left inherit
+    
+    &::before
+      display block
+      width 10px
+      height 0px
+      position absolute
+      bottom -10px
+      right 0
+      content ""
+      border-bottom 10px solid transparent
+      border-left 10px solid rgb(0, 80, 116)
+  
+  &.full
+    margin-right -10px
+    margin-left -10px
+    right 0
+    left 0
+    
+    &::before
+      display block
+      width 10px
+      height 0px
+      position absolute
+      bottom -10px
+      right 0
+      content ""
+      border-bottom 10px solid transparent
+      border-left 10px solid rgb(0, 80, 116)
+    
+    &::after
+      display block
+      width 10px
+      height 0px
+      position absolute
+      bottom -10px
+      left 0
+      content ""
+      border-bottom 10px solid transparent
+      border-right 10px solid rgb(0, 80, 116)
+      
