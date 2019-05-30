@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import { colors } from 'quasar'
+const { lighten } = colors
 
 function isCssColor (color) {
   return !!color && !!color.match(/^(#|(rgb|hsl)a?\()/)
@@ -7,6 +9,12 @@ function isCssColor (color) {
 export default Vue.extend({
   name: 'colorize',
   
+  data () {
+    return {
+      __leafColor: 'black'
+    }
+  },
+  
   props: {
     color: {
       type: String,
@@ -14,7 +22,10 @@ export default Vue.extend({
     },
     backgroundColor: {
       type: String,
-      default: 'blue'
+      default: '#027BE3'
+    },
+    leafColor: {
+      type: String
     }
   },
   
@@ -57,6 +68,19 @@ export default Vue.extend({
         }
       }
       return data
+    },
+    
+    __setLeafColor () {
+      this.__leafColor = this.leafColor
+        ? this.leafColor
+        : isCssColor(this.backgroundColor)
+          ? lighten(this.backgroundColor, -25)
+          : this.backgroundColor
     }
+  },
+  
+  created () {
+    this.__setLeafColor()
   }
+  
 })

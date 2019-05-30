@@ -1,7 +1,8 @@
 import Vue from 'vue'
 
 // Styles
-import './ribbon.styl'
+import './ribbon-default.styl'
+import './ribbon-corner.styl'
 
 // Utils
 import slot from 'quasar/src/utils/slot.js'
@@ -15,34 +16,80 @@ export default Vue.extend({
   mixins: [ Colorize ],
   
   props: {
-    right: Boolean,
-    full: Boolean,
-    inverted: Boolean
+    position: {
+      type: String,
+      default: 'left',
+      validator: (val) => [
+        'top left',
+        'top right',
+        'bottom left',
+        'bottom right',
+        'left',
+        'right',
+        'full'
+      ].includes(val)
+    },
+    type: {
+      type: String,
+      default: 'default',
+      validator: (val) => [
+        'default',
+        'corner'
+      ].includes(val)
+    }
   },
   
   computed: {
-    positionClass () {
-      return this.right ? 'right' : this.full ? 'full' : 'left'
+    typeClass () {
+      return `qribbon-${this.type}`
+    },
+    styles () {
+      let style = {}
+      style['--qribbon-text-color'] = this.color
+      style['--qribbon-background-color'] = this.backgroundColor
+      style['--qribbon-leaf-color'] = this.__leafColor
+      return style
     }
   },
   
   methods: {
+    __renderDefaultRibbon (h) {
+      return h('div', {
+        staticClass: this.typeClass,
+        class: {
+          [this.position]: true
+        },
+        style: this.styles
+      }, slot(this, 'default'))
+    },
+    
+    __renderCornerRibbon (h) {
+      return h('div', {
+        staticClass: this.typeClass,
+        class: {
+          [this.position]: true
+        },
+        style: this.styles
+      }, [
+        h('div', slot(this, 'default'))
+      ])
+    },
   
+    __renderRibbon (h) {
+      switch (this.type) {
+        case 'corner':
+          return this.__renderCornerRibbon(h)
+        default:
+          return this.__renderDefaultRibbon(h)
+      }
+    }
   },
   
   render (h) {
-    return h('section', {
-      class: 'relative'
+    return h('div', {
+      class: this.type === 'corner' ? '' : 'relative-position'
     }, [
-      h('div', this.setBothColors(this.color, this.backgroundColor, {
-        staticClass: 'qribbon',
-        class: {
-          'right': this.right,
-          'full': this.full,
-          'left': !this.right && !this.full,
-          'inverted': this.inverted
-        }
-      }), slot(this, 'default'))
+      this.__renderRibbon(h)
     ])
   }
   
