@@ -43,7 +43,8 @@ module.exports = function (ctx) {
         'QSeparator',
         'QColor',
         'QSelect',
-        'QInput'
+        'QInput',
+        'QPopupProxy'
       ],
 
       directives: [

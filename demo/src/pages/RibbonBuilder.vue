@@ -1,11 +1,11 @@
 <template>
   <q-page class="row justify-center items-baseline qribbon-builder">
-    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%">
+    <q-card class="q-my-lg q-py-md flat bordered" style="max-width: 800px; width: 90%">
       <div class="ribbon-wrapper">
         <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
       </div>
 
-      <q-separator class="" />
+      <q-separator />
 
       <q-card-section>
 
@@ -19,7 +19,7 @@
           {{content}}
         </q-ribbon>
 
-        <div class="row justify-around q-mt-lg">
+        <div class="row justify-around q-mt-lg gt-xs">
           <div class="text-center">
             Text Color
             <q-color v-model="color" no-header no-footer />
@@ -33,10 +33,54 @@
             <q-color v-model="leafColor" no-header no-footer />
           </div>
         </div>
+
+        <div class="row justify-around q-mt-lg xs">
+          <q-input
+            v-model="color"
+            class="col-12 q-mt-md"
+            label="Text Color"
+          >
+            <template v-slot:append>
+              <q-icon name="colorize" class="cursor-pointer">
+                <q-popup-proxy transition-show="scale" transition-hide="scale">
+                  <q-color v-model="color" no-header no-footer />
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+
+          <q-input
+            v-model="backgroundColor"
+            class="col-12"
+            label="Background Color"
+          >
+            <template v-slot:append>
+              <q-icon name="colorize" class="cursor-pointer">
+                <q-popup-proxy transition-show="scale" transition-hide="scale">
+                  <q-color v-model="backgroundColor" no-header no-footer />
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+
+          <q-input
+            v-model="leafColor"
+            class="col-12"
+            label="Leaf Color"
+          >
+            <template v-slot:append>
+              <q-icon name="colorize" class="cursor-pointer">
+                <q-popup-proxy transition-show="scale" transition-hide="scale">
+                  <q-color v-model="leafColor" no-header no-footer />
+                </q-popup-proxy>
+              </q-icon>
+            </template>
+          </q-input>
+        </div>
         <div class="row justify-around">
           <q-select
             label="Type"
-            class="col-5"
+            class="col-xs-12 col-5"
             v-model="type"
             map-options
             emit-value
@@ -48,7 +92,7 @@
 
           <q-select
             label="Position"
-            class="col-5"
+            class="col-xs-12 col-5"
             v-model="position"
             map-options
             emit-value
@@ -56,6 +100,9 @@
           />
         </div>
       </q-card-section>
+
+      <q-separator />
+
       <q-card-section>
         <q-input class="col-12" :value="componentOutput" ref="componentInput" type="textarea">
           <template #prepend>

@@ -1,8 +1,8 @@
 {
   "name": "demo",
-  "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "version": "1.0.0-alpha.2",
+  "description": "QRibbon Demo - A Quasar Framework app",
+  "productName": "QRibbon Demo",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
   "private": true,
