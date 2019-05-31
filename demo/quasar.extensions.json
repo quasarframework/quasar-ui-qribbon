@@ -1,3 +1,4 @@
 {
-  "qribbon": {}
+  "qribbon": {},
+  "@quasar/qmarkdown": {}
 }

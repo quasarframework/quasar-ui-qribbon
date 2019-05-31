@@ -1,28 +1,37 @@
-QRibbon
+QRibbon (qribbon)
 ===
 
-> A simple ribbon component for use in your Quasar project.
+> Please note that QRibbon is in alpha state.
+
+![npm (scoped)](https://img.shields.io/npm/v/@quasar/quasar-app-extension-qribbon.svg?style=plastic)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/quasarframework/app-extension-qribbon.svg)]()
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/quasarframework/app-extension-qribbon.svg)]()
+[![npm](https://img.shields.io/npm/dt/@quasar/quasar-app-extension-qribbon.svg)](https://www.npmjs.com/package/@quasar/quasar-app-extension-qribbon)
+
+QRibbon is an `UI App Extension` for [Quasar Framework v1](https://quasar.dev/). It will not work with legacy versions of Quasar Framework.
+
+This work is currently in `alpha` and there are expected changes while things get worked out. Your help with testing is greatly appreciated.
+
+# QRibbon
+Please check out the [documentation](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/).
 
 # Install
-```bash
-quasar ext add qribbon
+To add this App Extension to your Quasar application, run the following (in your Quasar app folder):
 ```
-Quasar CLI will retrieve it from NPM and install the extension.
-
-## Prompts
-
-> If your app extension uses prompts, explain them here, otherwise remove this section.
+quasar ext add @quasar/qribbon
+```
 
 # Uninstall
-```bash
-quasar ext remove qribbon
+To remove this App Extension from your Quasar application, run the following (in your Quasar app folder):
+```
+quasar ext remove @quasar/qribbon
 ```
 
-# Info
-> Add longer information here that will help the user of your app extension.
+# Describe
+You can use `quasar describe QRibbon` (TBD)
 
-# Other Info
-> Add other information that's not as important to know
+# Demo Project
+Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master/demo).
 
-# Patreon
-If you like (and use) this App Extension, please consider becoming a Quasar [Patreon](https://www.patreon.com/quasarframework).
+# Documentation
+Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/).

@@ -1,3 +1,3 @@
-# Quasar App
+# QRibbon Demo App
 
-> WIP
+Here for testing QRibbon

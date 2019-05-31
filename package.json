@@ -1,6 +1,6 @@
 {
   "name": "quasar-app-extension-qribbon",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.1",
   "description": "Quasar QRibbon App Extension",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
   "license": "MIT",
@@ -8,12 +8,20 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
   },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": "https://github.com/webnoob/app-extension-qribbon/issues",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/webnoob/app-extension-qribbon.git"
   },
-  "bugs": "",
-  "homepage": "",
+  "homepage": "https://github.com/webnoob/app-extension-qribbon",
   "engines": {
     "node": ">= 8.9.0",
     "npm": ">= 5.6.0",

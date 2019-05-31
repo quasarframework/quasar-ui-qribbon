@@ -26,7 +26,32 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
+        <q-item-label header>QRibbon</q-item-label>
+        <q-item clickable to="/">
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>QRibbon API</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable to="/examples">
+          <q-item-section avatar>
+            <q-icon name="?" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Examples</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable to="/builder">
+          <q-item-section avatar>
+            <q-icon name="build" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Ribbon Builder</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item-label header>Essential Quasar Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
           <q-item-section avatar>
             <q-icon name="school" />

@@ -12,9 +12,9 @@ import Colorize from './mixins/colorize'
 
 export default Vue.extend({
   name: 'QRibbon',
-  
+
   mixins: [ Colorize ],
-  
+
   props: {
     position: {
       type: String,
@@ -38,7 +38,7 @@ export default Vue.extend({
       ].includes(val)
     }
   },
-  
+
   computed: {
     typeClass () {
       return `qribbon-${this.type}`
@@ -47,11 +47,11 @@ export default Vue.extend({
       let style = {}
       style['--qribbon-text-color'] = this.color
       style['--qribbon-background-color'] = this.backgroundColor
-      style['--qribbon-leaf-color'] = this.__leafColor
+      style['--qribbon-leaf-color'] = this.leafColor || this.__leafColor
       return style
     }
   },
-  
+
   methods: {
     __renderDefaultRibbon (h) {
       return h('div', {
@@ -62,7 +62,7 @@ export default Vue.extend({
         style: this.styles
       }, slot(this, 'default'))
     },
-    
+
     __renderCornerRibbon (h) {
       return h('div', {
         staticClass: this.typeClass,
@@ -74,7 +74,7 @@ export default Vue.extend({
         h('div', slot(this, 'default'))
       ])
     },
-  
+
     __renderRibbon (h) {
       switch (this.type) {
         case 'corner':
@@ -84,7 +84,7 @@ export default Vue.extend({
       }
     }
   },
-  
+
   render (h) {
     return h('div', {
       class: this.type === 'corner' ? '' : 'relative-position'
@@ -92,5 +92,5 @@ export default Vue.extend({
       this.__renderRibbon(h)
     ])
   }
-  
+
 })

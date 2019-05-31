@@ -40,7 +40,10 @@ module.exports = function (ctx) {
         'QCard',
         'QCardSection',
         'QAvatar',
-        'QSeparator'
+        'QSeparator',
+        'QColor',
+        'QSelect',
+        'QInput'
       ],
 
       directives: [
