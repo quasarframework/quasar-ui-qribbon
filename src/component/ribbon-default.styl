@@ -35,7 +35,8 @@ $qribbon-height = 0px
   left 0
   background var(--qribbon-background-color, black)
   color var(--qribbon-text-color, white)
-  
+  z-index 100
+
   &.left
     @extend .__base-qribbon-left
 
@@ -45,7 +46,7 @@ $qribbon-height = 0px
   &.right
     @extend .__base-qribbon-right
     left inherit
-    
+
     &::before
       @extend .__base-qribbon-pseudo-right
 

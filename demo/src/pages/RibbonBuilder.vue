@@ -56,7 +56,7 @@
         </div>
       </q-card-section>
       <q-card-section>
-        <q-input class="col-12" :value="componentOutput" ref="componentInput">
+        <q-input class="col-12" :value="componentOutput" ref="componentInput" type="textarea">
           <template #prepend>
             <q-icon name="file_copy" @click="copyComponentText" />
           </template>
