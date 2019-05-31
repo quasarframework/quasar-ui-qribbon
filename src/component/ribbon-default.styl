@@ -2,7 +2,7 @@ $qribbon-width = 10px
 $qribbon-negative-width = -($qribbon-width)
 $qribbon-height = 0px
 
-.__base-qribbon-pseudo-before-after
+.qribbon__pseudo--before-after
   width $qribbon-width
   height $qribbon-height
   bottom $qribbon-negative-width
@@ -11,25 +11,25 @@ $qribbon-height = 0px
   position absolute
   content ""
 
-.__base-qribbon-pseudo-left
-  @extend .__base-qribbon-pseudo-before-after
+.qribbon__pseudo--left
+  @extend .qribbon__pseudo--before-after
   border-left $qribbon-width solid transparent
   left 0
 
-.__base-qribbon-pseudo-right
-  @extend .__base-qribbon-pseudo-before-after
+.qribbon__pseudo--right
+  @extend .qribbon__pseudo--before-after
   border-right $qribbon-width solid transparent
   right 0
 
-.__base-qribbon-left
+.qribbon--left
   margin-left $qribbon-negative-width
   left 0
 
-.__base-qribbon-right
+.qribbon--right
   margin-right $qribbon-negative-width
   right 0
 
-.qribbon-default
+.qribbon__default
   position absolute
   padding 5px 12px
   left 0
@@ -38,23 +38,23 @@ $qribbon-height = 0px
   z-index 100
 
   &.left
-    @extend .__base-qribbon-left
+    @extend .qribbon--left
 
     &::before
-      @extend .__base-qribbon-pseudo-left
+      @extend .qribbon__pseudo--left
 
   &.right
-    @extend .__base-qribbon-right
+    @extend .qribbon--right
     left inherit
 
     &::before
-      @extend .__base-qribbon-pseudo-right
+      @extend .qribbon__pseudo--right
 
   &.full
-    @extend .__base-qribbon-left, .__base-qribbon-right
+    @extend .qribbon--left, .qribbon--right
 
     &::before
-      @extend .__base-qribbon-pseudo-left
+      @extend .qribbon__pseudo--left
 
     &::after
-      @extend .__base-qribbon-pseudo-right
+      @extend .qribbon__pseudo--right

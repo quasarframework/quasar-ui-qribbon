@@ -41,7 +41,7 @@ export default Vue.extend({
 
   computed: {
     typeClass () {
-      return `qribbon-${this.type}`
+      return `qribbon__${this.type}`
     },
     styles () {
       let style = {}
@@ -87,7 +87,7 @@ export default Vue.extend({
 
   render (h) {
     return h('div', {
-      class: this.type === 'corner' ? '' : 'relative-position'
+      staticClass: 'qribbon__container'
     }, [
       this.__renderRibbon(h)
     ])
