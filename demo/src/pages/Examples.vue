@@ -1,6 +1,23 @@
 <template>
   <q-page class="row justify-center">
-    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%">
+    <q-card class="q-my-lg q-pa-md flat bordered" style="height: 90px; width: 75%">
+      <q-select
+        v-model="exampleTypes"
+        :options="[
+          { value: 'all', label: 'All Examples' },
+          { value: 'default', label: 'Default' },
+          { value: 'corner', label: 'Corner' }
+        ]"
+        label="Display Examples"
+        filled
+        multiple
+        use-chips
+        stack-label
+        emit-value
+      />
+    </q-card>
+
+    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%" v-show="exampleTypeHas('default')">
       <div class="ribbon-wrapper">
         <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon (type="default")</q-ribbon>
       </div>
@@ -71,7 +88,7 @@
       </div>
     </q-card>
 
-    <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%">
+    <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%" v-show="exampleTypeHas('corner')">
       <div class="ribbon-wrapper">
         <q-ribbon class="border-radius" type="default" position="top left" color="#616161" background-color="#e0e0e0">QRibbon (type="corner")</q-ribbon>
       </div>
@@ -100,9 +117,16 @@ import template from '../markdown/qribbon.md'
 export default {
   name: 'PageIndex',
 
+  methods: {
+    exampleTypeHas (type) {
+      return this.exampleTypes.includes(type) || this.exampleTypes.includes('all')
+    }
+  },
+
   data () {
     return {
-      template: template
+      template: template,
+      exampleTypes: ['all']
     }
   }
 }
