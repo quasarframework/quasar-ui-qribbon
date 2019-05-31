@@ -22,9 +22,13 @@
     "url": "git+https://github.com/webnoob/app-extension-qribbon.git"
   },
   "homepage": "https://github.com/webnoob/app-extension-qribbon",
-  "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.6.0",
-    "yarn": ">= 1.6.0"
-  }
+  "keywords": [
+    "quasar",
+    "app",
+    "app extension",
+    "extension",
+    "ribbon",
+    "qribbon",
+    "corner"
+  ]
 }
