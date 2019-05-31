@@ -1,9 +1,9 @@
 <template>
   <q-page class="row justify-center items-baseline qribbon-builder">
-    <q-card class="flat bordered q-mt-lg" style="width: 75%">
-      <q-card-section>
-        <div class="text-h6">QRibbon Builder</div>
-      </q-card-section>
+    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%">
+      <div class="ribbon-wrapper">
+        <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
+      </div>
 
       <q-separator class="q-mb-lg" />
 
@@ -60,6 +60,10 @@
           <template #prepend>
             <q-icon name="file_copy" @click="copyComponentText" />
           </template>
+
+          <template #append>
+            <q-icon name="refresh" @click="reset" />
+          </template>
         </q-input>
       </q-card-section>
     </q-card>
@@ -70,6 +74,17 @@
 </style>
 
 <script>
+function initialState () {
+  return {
+    positionVal: 'left',
+    type: 'default',
+    color: '#ffffff',
+    backgroundColor: '#027BE3',
+    leafColor: '',
+    content: 'My Ribbon'
+  }
+}
+
 export default {
   name: 'InteractiveDemo',
 
@@ -109,8 +124,9 @@ export default {
       return foundPosition ? foundPosition.value : positionOptions[0].value
     },
     componentOutput () {
-      const leaf = this.leafColor ? ` :leaf-color="${this.leafColor}"` : ''
-      return `<q-ribbon position="${this.getPosition}" :type="${this.type}" :color="${this.color}" :background-color=${this.backgroundColor}"${leaf}></q-ribbon>`
+      const leaf = this.leafColor ? ` leaf-color="${this.leafColor}"` : ''
+      const type = this.type === 'default' ? '' : ` type="${this.type}"`
+      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}"${leaf}></q-ribbon>`
     }
   },
 
@@ -128,29 +144,15 @@ export default {
         actions: [ { icon: 'close', color: 'white' } ],
         timeout: 2000
       })
+    },
+
+    reset () {
+      Object.assign(this.$data, initialState())
     }
   },
 
   data () {
-    return {
-      positionVal: 'left',
-      type: 'default',
-      color: '#ffffff',
-      backgroundColor: '#027BE3',
-      leafColor: '',
-      content: 'My Ribbon'
-    }
+    return initialState()
   }
 }
 </script>
-
-<style lang="stylus">
-  .qribbon-builder
-    .ribbon-wrapper
-      height 300px
-      width 300px
-      position relative
-      background $grey-3
-      margin 30px auto
-      padding-top 30px
-</style>

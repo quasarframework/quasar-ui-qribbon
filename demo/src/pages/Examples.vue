@@ -1,78 +1,80 @@
 <template>
   <q-page class="row justify-center">
-    <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%">
-      <q-card-section>
-        <div class="text-h6">QRibbon (type="default")</div>
-      </q-card-section>
+    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%">
+      <div class="ribbon-wrapper">
+        <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon (type="default")</q-ribbon>
+      </div>
 
       <q-separator class="q-mb-lg" />
 
-      <div class="ribbon-wrapper">
-        <q-ribbon>Left Ribbon (default)</q-ribbon>
-      </div>
+      <div class="box-ribbon-wrapper q-py-md">
+        <div class="ribbon-wrapper">
+          <q-ribbon>Left Ribbon (default)</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon class="border-radius">With border radius</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon class="border-radius">With border radius</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon color="red" background-color="yellow">Hippy Ribbon</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon color="red" background-color="yellow">Hippy Ribbon</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon color="white" background-color="#FF0000">Auto shade the leaf by passing CSS color (e.g. #FF0000)</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon color="white" background-color="#FF0000">Auto shade the leaf by passing CSS color (e.g. #FF0000)</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon>
-          <q-icon name="home" />
-        </q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon>
+            <q-icon name="home" />
+          </q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon>Inline Left Ribbon</q-ribbon>
-        <q-ribbon position="right">Inline Right Ribbon</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon>Inline Left Ribbon</q-ribbon>
+          <q-ribbon position="right">Inline Right Ribbon</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon position="right">Right Ribbon</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon position="right">Right Ribbon</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper avatar">
-        <q-ribbon position="right">
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/avatar.png">
-          </q-avatar>
-        </q-ribbon>
-      </div>
+        <div class="ribbon-wrapper avatar">
+          <q-ribbon position="right">
+            <q-avatar>
+              <img src="https://cdn.quasar.dev/img/avatar.png">
+            </q-avatar>
+          </q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon color="purple" leaf-color="purple" background-color="orange" position="right">Hippy Ribbon</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon color="purple" leaf-color="purple" background-color="orange" position="right">Hippy Ribbon</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon color="yellow" leaf-color="blue" background-color="green" position="right">Different Leaf Color - Hippy Ribbon</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon color="yellow" leaf-color="blue" background-color="green" position="right">Different Leaf Color - Hippy Ribbon</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon class="text-center" position="full">Full Ribbon (.text-center)</q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon class="text-center" position="full">Full Ribbon (.text-center)</q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon position="full">
-          <marquee>Let's Marquee!</marquee>
-        </q-ribbon>
-      </div>
+        <div class="ribbon-wrapper">
+          <q-ribbon position="full">
+            <marquee>Let's Marquee!</marquee>
+          </q-ribbon>
+        </div>
 
-      <div class="ribbon-wrapper">
-        <q-ribbon class="text-right" position="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
+        <div class="ribbon-wrapper">
+          <q-ribbon class="text-right" position="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
+        </div>
       </div>
     </q-card>
 
     <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%">
-      <q-card-section>
-        <div class="text-h6">QRibbon (type="corner")</div>
-      </q-card-section>
+      <div class="ribbon-wrapper">
+        <q-ribbon class="border-radius" type="default" position="top left" color="#616161" background-color="#e0e0e0">QRibbon (type="corner")</q-ribbon>
+      </div>
 
       <q-separator />
 
@@ -107,19 +109,9 @@ export default {
 </script>
 
 <style lang="stylus">
-  .ribbon-wrapper
-    height 50px
-
-    &.avatar
-      height 75px
-
-    .border-radius
-      [class^=qribbon-]
-        border-radius 0 4px 4px 0
-
   .box-ribbon-wrapper
-    width 75%
-    height 400px
+    width 90%
+    min-height 400px
     background-color $grey-3
     margin 0 auto
     position relative

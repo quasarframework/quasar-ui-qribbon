@@ -20,6 +20,9 @@ quasar ext remove qribbon
 # Describe
 You can use `quasar describe QRibbon` (to be implemented before QRibbon v1 release)
 
+# Source
+Can be found [here](https://github.com/webnoob/app-extension-qribbon/).
+
 # Docs
 Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/).
 
