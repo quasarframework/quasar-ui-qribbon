@@ -5,19 +5,20 @@
         <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
       </div>
 
-      <q-separator class="q-mb-lg" />
-
-      <q-ribbon
-        :position="getPosition"
-        :type="type"
-        :color="color"
-        :background-color="backgroundColor"
-        :leaf-color="leafColor"
-      >
-        {{content}}
-      </q-ribbon>
+      <q-separator class="" />
 
       <q-card-section>
+
+        <q-ribbon
+          :position="getPosition"
+          :type="type"
+          :color="color"
+          :background-color="backgroundColor"
+          :leaf-color="leafColor"
+        >
+          {{content}}
+        </q-ribbon>
+
         <div class="row justify-around q-mt-lg">
           <div class="text-center">
             Text Color
