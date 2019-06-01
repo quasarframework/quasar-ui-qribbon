@@ -41,11 +41,13 @@ Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-| type | String | Defaults to `default`. Acceptable options are `default`, `corner` |
-| position | String | Acceptable strings are: <br/> Type==`default`: `left`, `right`, `full`<br/> Type==`corner`: `top left`, `top right`, `bottom left`, `bottom right` |
+| type | String | Defaults to `horizontal`. Acceptable options are `horizontal`, `corner`, `vertical` |
+| position | String | Acceptable strings are: <br/> Type==`horizontal`: `left`, `right`, `full`<br/> Type==`corner`or`vertical`: `top left`, `top right`, `bottom left`, `bottom right` |
 | color | Array | CSS Color for the text |
 | background-color | String | CSS Color for the background |
 | leaf-color | Boolean | CSS Color for the leaf |
+| leaf-position | String | Acceptable strings are: <br/> Type==`horizontal`: `top`, `bottom`<br/> Type==`vertical`: `left`, `right` |
+| size | String | Acceptable options are `full` to fill the container or empty for default. |
 
 ## Vue Slots
 | Slot Name | Description |

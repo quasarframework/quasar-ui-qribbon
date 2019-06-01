@@ -2,7 +2,7 @@
   <q-page class="row justify-center items-baseline qribbon-builder">
     <q-card class="q-my-lg q-py-md flat bordered" style="max-width: 800px; width: 90%">
       <div class="ribbon-wrapper">
-        <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
+        <q-ribbon class="border-radius" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
       </div>
 
       <q-separator />
@@ -15,6 +15,9 @@
           :color="color"
           :background-color="backgroundColor"
           :leaf-color="leafColor"
+          :leaf-position="leafPosition"
+          :size="full ? 'full' : void 0"
+          class="q-pb-md"
         >
           {{content}}
         </q-ribbon>
@@ -80,23 +83,41 @@
         <div class="row justify-around">
           <q-select
             label="Type"
-            class="col-xs-12 col-5"
+            class="col-xs-12"
             v-model="type"
             map-options
             emit-value
             :options="[
-              { value: 'default', label: 'Default' },
+              { value: 'horizontal', label: 'Horizontal (Default)' },
+              { value: 'vertical', label: 'Vertical' },
               { value: 'corner', label: 'Corner' }
             ]"
           />
 
           <q-select
             label="Position"
-            class="col-xs-12 col-5"
+            class="col-xs-12"
             v-model="position"
             map-options
             emit-value
             :options="positionOptions"
+          />
+
+          <q-select
+            label="Leaf Position"
+            class="col-xs-12"
+            v-model="leafPosition"
+            map-options
+            emit-value
+            :options="leafPositionOptions"
+            v-if="!isCorner"
+          />
+
+          <q-checkbox
+            v-model="full"
+            label="Full?"
+            class="q-pt-xs"
+            v-if="!isCorner"
           />
         </div>
       </q-card-section>
@@ -125,11 +146,13 @@
 function initialState () {
   return {
     positionVal: 'left',
-    type: 'default',
+    leafPositionVal: 'bottom',
+    type: 'horizontal',
     color: '#ffffff',
     backgroundColor: '#027BE3',
     leafColor: '',
-    content: 'My Ribbon'
+    content: 'My Ribbon',
+    full: false
   }
 }
 
@@ -140,18 +163,47 @@ export default {
     positionOptions () {
       switch (this.type) {
         case 'corner':
+        case 'vertical':
+          if (this.full && this.type === 'vertical') {
+            return [
+              { value: 'left', label: 'Left' },
+              { value: 'right', label: 'Right' }
+            ]
+          }
+
           return [
-            { value: 'top left', label: 'Top Left' },
-            { value: 'top right', label: 'Top Right' },
-            { value: 'bottom left', label: 'Bottom Left' },
-            { value: 'bottom right', label: 'Bottom Right' }
+            { value: 'top-left', label: 'Top Left' },
+            { value: 'top-right', label: 'Top Right' },
+            { value: 'bottom-left', label: 'Bottom Left' },
+            { value: 'bottom-right', label: 'Bottom Right' }
           ]
         default:
           return [
             { value: 'left', label: 'Left' },
-            { value: 'right', label: 'Right' },
-            { value: 'full', label: 'Full' }
+            { value: 'right', label: 'Right' }
           ]
+      }
+    },
+    leafPositionOptions () {
+      switch (this.type) {
+        case 'vertical':
+          return [
+            { value: 'left', label: 'Left' },
+            { value: 'right', label: 'Right' }
+          ]
+        default:
+          return [
+            { value: 'top', label: 'Top' },
+            { value: 'bottom', label: 'Bottom' }
+          ]
+      }
+    },
+    leafPosition: {
+      get () {
+        return this.getLeafPosition
+      },
+      set (val) {
+        this.leafPositionVal = val
       }
     },
     position: {
@@ -161,6 +213,15 @@ export default {
       set (val) {
         this.positionVal = val
       }
+    },
+    getLeafPosition () {
+      const positionOptions = this.leafPositionOptions
+      const foundPosition = positionOptions.find(f => {
+        console.log(f.value)
+        return f.value === this.leafPositionVal
+      })
+
+      return foundPosition ? foundPosition.value : positionOptions[0].value
     },
     getPosition () {
       const positionOptions = this.positionOptions
@@ -173,15 +234,17 @@ export default {
     },
     componentOutput () {
       const leaf = this.leafColor ? ` leaf-color="${this.leafColor}"` : ''
-      const type = this.type === 'default' ? '' : ` type="${this.type}"`
-      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}"${leaf}></q-ribbon>`
+      const type = this.type === 'horizontal' ? '' : ` type="${this.type}"`
+      const full = this.full ? ` size="full"` : ''
+      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}" leaf-position="${this.leafPosition}"${leaf}${full}></q-ribbon>`
+    },
+    isCorner () {
+      return this.type === 'corner'
     }
   },
 
   methods: {
     copyComponentText () {
-      console.log('Click')
-      console.log(this.$refs.componentInput)
       this.$refs.componentInput.select()
       document.execCommand('copy')
 
