@@ -5,7 +5,8 @@
         v-model="exampleTypes"
         :options="[
           { value: 'all', label: 'All Examples' },
-          { value: 'default', label: 'Default' },
+          { value: 'horizontal', label: 'Horizontal (Default)' },
+          { value: 'vertical', label: 'Vertical' },
           { value: 'corner', label: 'Corner' }
         ]"
         label="Display Examples"
@@ -17,16 +18,16 @@
       />
     </q-card>
 
-    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%" v-show="exampleTypeHas('default')">
+    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%" v-show="exampleTypeHas('horizontal')">
       <div class="ribbon-wrapper">
-        <q-ribbon class="border-radius" type="default" position="left" color="#616161" background-color="#e0e0e0">QRibbon (type="default")</q-ribbon>
+        <q-ribbon class="border-radius" color="#616161" background-color="#e0e0e0">QRibbon (type="horizontal")</q-ribbon>
       </div>
 
       <q-separator class="q-mb-lg" />
 
       <div class="box-ribbon-wrapper q-py-md">
         <div class="ribbon-wrapper">
-          <q-ribbon>Left Ribbon (default)</q-ribbon>
+          <q-ribbon leaf-position="top">Left Ribbon (default)</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
@@ -49,7 +50,7 @@
 
         <div class="ribbon-wrapper">
           <q-ribbon>Inline Left Ribbon</q-ribbon>
-          <q-ribbon position="right">Inline Right Ribbon</q-ribbon>
+          <q-ribbon position="right" leaf-position="top">Inline Right Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
@@ -73,36 +74,58 @@
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon class="text-center" position="full">Full Ribbon (.text-center)</q-ribbon>
+          <q-ribbon class="text-center" size="full">Full Ribbon (.text-center)</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon position="full">
+          <q-ribbon size="full">
             <marquee>Let's Marquee!</marquee>
           </q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon class="text-right" position="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
+          <q-ribbon class="text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
+        </div>
+      </div>
+    </q-card>
+
+    <q-card class="q-my-lg q-py-md flat bordered" style="width: 75%" v-show="exampleTypeHas('vertical')">
+      <div class="ribbon-wrapper">
+        <q-ribbon class="border-radius" color="#616161" background-color="#e0e0e0">QRibbon (type="vertical")</q-ribbon>
+      </div>
+
+      <q-separator class="q-mb-lg" />
+
+      <div class="box-ribbon-wrapper q-py-md">
+        <div class="ribbon-wrapper">
+          <q-ribbon type="vertical" position="top-left" leaf-position="right">Top Down Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper">
+          <q-ribbon type="vertical" position="bottom-left" leaf-position="left">Bottom Up Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper">
+          <q-ribbon type="vertical" position="right" size="full" leaf-position="left" class="text-center">Full Ribbon (.text-center)</q-ribbon>
         </div>
       </div>
     </q-card>
 
     <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%" v-show="exampleTypeHas('corner')">
       <div class="ribbon-wrapper">
-        <q-ribbon class="border-radius" type="default" position="top left" color="#616161" background-color="#e0e0e0">QRibbon (type="corner")</q-ribbon>
+        <q-ribbon class="border-radius" color="#616161" background-color="#e0e0e0">QRibbon (type="corner")</q-ribbon>
       </div>
 
       <q-separator />
 
       <q-card-section>
         <div class="box-ribbon-wrapper">
-          <q-ribbon position="top left" type="corner">Top Left</q-ribbon>
-          <q-ribbon class="github-text" position="top right" type="corner" color="white" background-color="#5b5e63">
+          <q-ribbon position="top-left" type="corner">Top Left</q-ribbon>
+          <q-ribbon class="github-text" position="top-right" type="corner" color="white" background-color="#5b5e63">
             <a href="#">FORK ME ON GITHUB!</a>
           </q-ribbon>
-          <q-ribbon class="qribbon-bottom" position="bottom left" type="corner"><span class="rotate-270">Bottom Left</span></q-ribbon>
-          <q-ribbon class="qribbon-bottom" position="bottom right" type="corner">Bottom Right</q-ribbon>
+          <q-ribbon class="qribbon-bottom" position="bottom-left" type="corner"><span class="rotate-270">Bottom Left</span></q-ribbon>
+          <q-ribbon class="qribbon-bottom" position="bottom-right" type="corner">Bottom Right</q-ribbon>
         </div>
       </q-card-section>
     </q-card>

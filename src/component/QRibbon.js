@@ -20,28 +20,56 @@ export default Vue.extend({
       type: String,
       default: 'left',
       validator: (val) => [
-        'top left',
-        'top right',
-        'bottom left',
-        'bottom right',
+        'top-left',
+        'top-right',
+        'bottom-left',
+        'bottom-right',
         'left',
-        'right',
-        'full'
+        'right'
       ].includes(val)
     },
     type: {
       type: String,
-      default: 'default',
+      default: 'horizontal',
       validator: (val) => [
-        'default',
+        'horizontal',
+        'vertical',
         'corner'
+      ].includes(val)
+    },
+    leafPosition: {
+      type: String,
+      default: 'bottom',
+      validator: (val) => [
+        'top',
+        'bottom',
+        'left',
+        'right'
+      ].includes(val)
+    },
+    size: {
+      type: String,
+      validator: (val) => [
+        'full'
+      ].includes(val)
+    },
+    decoration: {
+      type: String,
+      validator: (val) => [
+        'round-in',
+        'triangle-in',
+        'round-out',
+        'triangle-out'
       ].includes(val)
     }
   },
 
   computed: {
-    typeClass () {
-      return `qribbon__${this.type}`
+    ribbonClass () {
+      let className = `qribbon__${this.type}--${this.position}`
+      if (this.size !== void 0) className += `-${this.size}`
+      if (this.leafPosition !== void 0) className += ` leaf-${this.leafPosition}`
+      return className
     },
     styles () {
       let style = {}
@@ -55,20 +83,14 @@ export default Vue.extend({
   methods: {
     __renderDefaultRibbon (h) {
       return h('div', {
-        staticClass: this.typeClass,
-        class: {
-          [this.position]: true
-        },
+        staticClass: this.ribbonClass,
         style: this.styles
       }, slot(this, 'default'))
     },
 
     __renderCornerRibbon (h) {
       return h('div', {
-        staticClass: this.typeClass,
-        class: {
-          [this.position]: true
-        },
+        staticClass: this.ribbonClass,
         style: this.styles
       }, [
         h('div', slot(this, 'default'))
