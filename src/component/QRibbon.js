@@ -81,20 +81,20 @@ export default Vue.extend({
   },
 
   methods: {
-    __renderDefaultRibbon (h) {
+    __renderBaseRibbon (h, children) {
+      const lastParam = children || slot(this, 'default')
       return h('div', {
         staticClass: this.ribbonClass,
         style: this.styles
-      }, slot(this, 'default'))
+      }, lastParam)
+    },
+
+    __renderDefaultRibbon (h) {
+      return this.__renderBaseRibbon(h)
     },
 
     __renderCornerRibbon (h) {
-      return h('div', {
-        staticClass: this.ribbonClass,
-        style: this.styles
-      }, [
-        h('div', slot(this, 'default'))
-      ])
+      return this.__renderBaseRibbon(h, [ h('div', slot(this, 'default')) ])
     },
 
     __renderRibbon (h) {
