@@ -27,7 +27,7 @@
 
       <div class="box-ribbon-wrapper q-py-md">
         <div class="ribbon-wrapper">
-          <q-ribbon leaf-position="top">Left Ribbon (default)</q-ribbon>
+          <q-ribbon leaf-position="top" decoration="point-in">Left Ribbon (default)</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon color="red" background-color="yellow">Hippy Ribbon</q-ribbon>
+          <q-ribbon color="red" background-color="yellow" decoration="point-out">Hippy Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
@@ -50,11 +50,11 @@
 
         <div class="ribbon-wrapper">
           <q-ribbon>Inline Left Ribbon</q-ribbon>
-          <q-ribbon position="right" leaf-position="top">Inline Right Ribbon</q-ribbon>
+          <q-ribbon position="right" leaf-position="top" decoration="rounded-in">Inline Right Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon position="right">Right Ribbon</q-ribbon>
+          <q-ribbon position="right" decoration="rounded-out">Right Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper avatar">
@@ -103,6 +103,22 @@
 
         <div class="ribbon-wrapper">
           <q-ribbon type="vertical" position="bottom-left" leaf-position="left">Bottom Up Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper move-50">
+          <q-ribbon type="vertical" position="top-left" leaf-position="right" decoration="point-in">Top Down Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper move-50">
+          <q-ribbon type="vertical" position="bottom-left" leaf-position="left" decoration="point-out">Bottom Up Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper move-100">
+          <q-ribbon type="vertical" position="top-left" leaf-position="right" decoration="rounded-in">Top Down Ribbon</q-ribbon>
+        </div>
+
+        <div class="ribbon-wrapper move-100">
+          <q-ribbon type="vertical" position="bottom-left" leaf-position="left" decoration="rounded-out">Bottom Up Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">

@@ -17,6 +17,7 @@
           :leaf-color="leafColor"
           :leaf-position="leafPosition"
           :size="full ? 'full' : void 0"
+          :decoration="decoration"
           class="q-pb-md"
         >
           {{content}}
@@ -113,6 +114,22 @@
             v-if="!isCorner"
           />
 
+          <q-select
+            label="Decoration"
+            class="col-xs-12"
+            v-model="decoration"
+            map-options
+            emit-value
+            :options="[
+              { value: null, label: 'Default' },
+              { value: 'rounded-in', label: 'Rounded In' },
+              { value: 'rounded-out', label: 'Rounded Out' },
+              { value: 'point-in', label: 'Point In' },
+              { value: 'point-out', label: 'Point Out' }
+            ]"
+            v-if="!isCorner"
+          />
+
           <q-checkbox
             v-model="full"
             label="Full?"
@@ -152,7 +169,8 @@ function initialState () {
     backgroundColor: '#027BE3',
     leafColor: '',
     content: 'My Ribbon',
-    full: false
+    full: false,
+    decoration: null
   }
 }
 
@@ -236,7 +254,8 @@ export default {
       const leaf = this.leafColor ? ` leaf-color="${this.leafColor}"` : ''
       const type = this.type === 'horizontal' ? '' : ` type="${this.type}"`
       const full = this.full ? ` size="full"` : ''
-      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}" leaf-position="${this.leafPosition}"${leaf}${full}></q-ribbon>`
+      const decoration = this.decoration ? ` decoration="${this.decoration}"` : ''
+      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}" leaf-position="${this.leafPosition}"${leaf}${full}${decoration}></q-ribbon>`
     },
     isCorner () {
       return this.type === 'corner'

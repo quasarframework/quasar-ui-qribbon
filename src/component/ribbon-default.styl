@@ -204,3 +204,134 @@ $qribbon-height = 0px
   right $qribbon-width*2
   left inherit
 
+[class*=vertical--top].decorate-point-in,
+[class*=vertical--bottom].decorate-point-in
+  div
+    &::after
+      content ""
+      display block
+      position absolute
+      bottom -12px
+      left 0
+      right 0
+      border-top 12px solid transparent
+      border-bottom 12px solid transparent
+      border-right 15px solid var(--qribbon-background-color, black)
+      border-left 15px solid var(--qribbon-background-color, black)
+
+[class*=vertical--bottom].decorate-point-in
+  div
+    &::after
+      bottom inherit
+      top -12px
+      border-top 12px solid transparent
+      border-bottom 12px solid transparent
+      border-right 15px solid var(--qribbon-background-color, black)
+      border-left 15px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-point-out,
+[class*=vertical--bottom].decorate-point-out
+  div
+    &::after
+      content ""
+      display block
+      position absolute
+      top -24px
+      left 0
+      right 0
+      border-top 12px solid transparent
+      border-right 15px solid transparent
+      border-left 15px solid transparent
+      border-bottom 12px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-point-out
+  div
+    &::after
+      bottom -24px
+      top inherit
+      border-bottom 12px solid transparent
+      border-right 15px solid transparent
+      border-left 15px solid transparent
+      border-top 12px solid var(--qribbon-background-color, black)
+
+[class*=horizontal--left].decorate-point-in,
+[class*=horizontal--right].decorate-point-in
+  div
+    &::after
+      content ""
+      display block
+      position absolute
+      right -12px
+      top 0
+      bottom 0
+      border-left 12px solid transparent
+      border-right 12px solid transparent
+      border-top 15px solid var(--qribbon-background-color, black)
+      border-bottom 15px solid var(--qribbon-background-color, black)
+
+[class*=horizontal--right].decorate-point-in
+  div
+    &::after
+      right inherit
+      left -12px
+      border-left 12px solid transparent
+      border-right 12px solid transparent
+      border-top 15px solid var(--qribbon-background-color, black)
+      border-bottom 15px solid var(--qribbon-background-color, black)
+
+[class*=horizontal--left].decorate-point-out,
+[class*=horizontal--right].decorate-point-out
+  div
+    &::after
+      content ""
+      display block
+      position absolute
+      bottom 0
+      top 0
+      right -24px
+      border-top 15px solid transparent
+      border-bottom 15px solid transparent
+      border-right 12px solid transparent
+      border-left 12px solid var(--qribbon-background-color, black)
+
+[class*=horizontal--right].decorate-point-out
+  div
+    &::after
+      left -24px
+      right inherit
+      border-top 15px solid transparent
+      border-bottom 15px solid transparent
+      border-left 12px solid transparent
+      border-right 12px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-rounded-in
+  padding-bottom 24px
+  background radial-gradient(circle at bottom, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=vertical--bottom].decorate-rounded-in
+  padding-top 24px
+  background radial-gradient(circle at top, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=vertical--bottom].decorate-rounded-out
+  border-top-left-radius 15px
+  border-top-right-radius 15px
+
+[class*=vertical--top].decorate-rounded-out
+  border-bottom-left-radius 15px
+  border-bottom-right-radius 15px
+
+[class*=horizontal--left].decorate-rounded-in
+  padding-right 24px
+  background radial-gradient(circle at right, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=horizontal--right].decorate-rounded-in
+  padding-left 24px
+  background radial-gradient(circle at left, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=horizontal--left].decorate-rounded-out
+  border-top-right-radius 15px
+  border-bottom-right-radius 15px
+
+[class*=horizontal--right].decorate-rounded-out
+  border-top-left-radius 15px
+  border-bottom-left-radius 15px

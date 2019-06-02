@@ -48,6 +48,7 @@ Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master
 | leaf-color | Boolean | CSS Color for the leaf |
 | leaf-position | String | Acceptable strings are: <br/> Type==`horizontal`: `top`, `bottom`<br/> Type==`vertical`: `left`, `right` |
 | size | String | Acceptable options are `full` to fill the container or empty for default. |
+| decoration | String | Defaults to nothing. Cannot be used with `corner` type ribbon. Acceptable options are `rounded-in`, `rounded-out`, `point-in`, `point-out`. |
 
 ## Vue Slots
 | Slot Name | Description |

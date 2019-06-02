@@ -57,8 +57,8 @@ export default Vue.extend({
       type: String,
       validator: (val) => [
         'round-in',
-        'triangle-in',
         'round-out',
+        'triangle-in',
         'triangle-out'
       ].includes(val)
     }
@@ -69,6 +69,7 @@ export default Vue.extend({
       let className = `qribbon__${this.type}--${this.position}`
       if (this.size !== void 0) className += `-${this.size}`
       if (this.leafPosition !== void 0) className += ` leaf-${this.leafPosition}`
+      if (this.decoration !== void 0) className += ` decorate-${this.decoration}`
       return className
     },
     styles () {
@@ -90,7 +91,7 @@ export default Vue.extend({
     },
 
     __renderDefaultRibbon (h) {
-      return this.__renderBaseRibbon(h)
+      return this.__renderBaseRibbon(h, [ h('div', slot(this, 'default')) ])
     },
 
     __renderCornerRibbon (h) {
