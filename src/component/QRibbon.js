@@ -56,8 +56,8 @@ export default Vue.extend({
     decoration: {
       type: String,
       validator: (val) => [
-        'round-in',
-        'round-out',
+        'rounded-in',
+        'rounded-out',
         'triangle-in',
         'triangle-out'
       ].includes(val)
