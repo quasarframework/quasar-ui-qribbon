@@ -39,16 +39,17 @@ Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master
 
 ## Vue Properties
 
-| Vue Property | Type | Description |
-| --- | --- | --- |
-| type | String | Defaults to `horizontal`. Acceptable options are `horizontal`, `corner`, `vertical` |
-| position | String | Acceptable strings are: <br/> Type==`horizontal`: `left`, `right`, `full`<br/> Type==`corner`or`vertical`: `top left`, `top right`, `bottom left`, `bottom right` |
-| color | Array | CSS Color for the text |
-| background-color | String | CSS Color for the background |
-| leaf-color | Boolean | CSS Color for the leaf |
-| leaf-position | String | Acceptable strings are: <br/> Type==`horizontal`: `top`, `bottom`<br/> Type==`vertical`: `left`, `right` |
-| size | String | Acceptable options are `full` to fill the container or empty for default. |
-| decoration | String | Defaults to nothing. Cannot be used with `corner` type ribbon. Acceptable options are `rounded-in`, `rounded-out`, `point-in`, `point-out`. |
+| Vue Property | Type | Default | Description |
+| --- | --- | --- | --- |
+| type | String | `horizontal` | Acceptable options are `horizontal`, `corner`, `vertical` |
+| position | String | `left` or `top-left` | Acceptable strings are: <br/> Type==`horizontal`: `left`, `right`, `full`<br/> Type==`corner`or`vertical`: `top left`, `top right`, `bottom left`, `bottom right` |
+| color | String | `white` | CSS Color for the text |
+| background-color | String | `#027BE3` | CSS Color for the background |
+| leaf-color | String | Auto shaded based on `background-color` | CSS Color for the leaf |
+| leaf-position | String | `bottom` or `left` | Acceptable strings are: <br/> Type==`horizontal`: `top`, `bottom`<br/> Type==`vertical`: `left`, `right` |
+| size | String | `null` | Acceptable option is `full` to fill the container. |
+| decoration | String | `null` | Cannot be used with `corner` type ribbon. Acceptable options are `rounded-in`, `rounded-out`, `point-in`, `point-out`. |
+| inline | Boolean | `false` | Used when 2 QRibbons are required to be inline (on left and right along the same X axis). Bith QRibbon's must be wrapped in a `<div class="flex justify-between"></div>`. |
 
 ## Vue Slots
 | Slot Name | Description |

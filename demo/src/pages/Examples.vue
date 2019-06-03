@@ -26,66 +26,113 @@
       <q-separator class="q-mb-lg" />
 
       <div class="box-ribbon-wrapper q-py-md">
-        <div class="ribbon-wrapper">
-          <q-ribbon leaf-position="top" decoration="point-in">Left Ribbon (default)</q-ribbon>
-        </div>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon class="border-radius">With border radius</q-ribbon>
-        </div>
+        <div class="flex justify-between">
+          <q-ribbon class="q-pb-md" leaf-position="top" decoration="point-in">Left Ribbon</q-ribbon>
+          <q-ribbon class="q-pb-md cursor-pointer" leaf-position="top" decoration="point-out" position="right">
+            QMenu QRibbon
+            <q-menu anchor="center left" self="top right">
+              <q-list dense style="min-width: 100px">
+                <q-item clickable v-close-popup>
+                  <q-item-section>Open...</q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup>
+                  <q-item-section>New</q-item-section>
+                </q-item>
+                <q-separator />
+                <q-item clickable>
+                  <q-item-section>Preferences</q-item-section>
+                  <q-item-section side>
+                    <q-icon name="keyboard_arrow_right" />
+                  </q-item-section>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon color="red" background-color="yellow" decoration="point-out">Hippy Ribbon</q-ribbon>
-        </div>
+                  <q-menu anchor="top right" self="top left">
+                    <q-list>
+                      <q-item
+                        v-for="n in 3"
+                        :key="n"
+                        dense
+                        clickable
+                      >
+                        <q-item-section>Submenu Label</q-item-section>
+                        <q-item-section side>
+                          <q-icon name="keyboard_arrow_right" />
+                        </q-item-section>
+                        <q-menu auto-close anchor="top right" self="top left">
+                          <q-list>
+                            <q-item
+                              v-for="n in 3"
+                              :key="n"
+                              dense
+                              clickable
+                            >
+                              <q-item-section>3rd level Label</q-item-section>
+                            </q-item>
+                          </q-list>
+                        </q-menu>
+                      </q-item>
+                    </q-list>
+                  </q-menu>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon color="white" background-color="#FF0000">Auto shade the leaf by passing CSS color (e.g. #FF0000)</q-ribbon>
-        </div>
-
-        <div class="ribbon-wrapper">
-          <q-ribbon>
-            <q-icon name="home" />
+                </q-item>
+                <q-separator />
+                <q-item clickable v-close-popup>
+                  <q-item-section>Quit</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
           </q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon>Inline Left Ribbon</q-ribbon>
-          <q-ribbon position="right" leaf-position="top" decoration="rounded-in">Inline Right Ribbon</q-ribbon>
-        </div>
-
-        <div class="ribbon-wrapper">
-          <q-ribbon position="right" decoration="rounded-out">Right Ribbon</q-ribbon>
-        </div>
-
-        <div class="ribbon-wrapper avatar">
-          <q-ribbon position="right">
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/img/avatar.png">
-            </q-avatar>
+        <q-toolbar class="q-pb-md qribbon">
+          <q-ribbon
+            position="left"
+            color="rgba(0,0,0,.58)"
+            background-color="#c0c0c0"
+            leaf-color="#a0a0a0"
+            leaf-position="bottom"
+            decoration="rounded-out"
+          >
+            <q-toolbar-title
+              class="example-title"
+            >
+              QToolbar / QRibbon with QToolBarTitle
+            </q-toolbar-title>
           </q-ribbon>
+        </q-toolbar>
+
+        <q-ribbon class="q-pb-md border-radius">With border radius</q-ribbon>
+
+        <q-ribbon class="q-pb-md" color="red" background-color="yellow" decoration="point-out">Hippy Ribbon</q-ribbon>
+
+        <q-ribbon class="q-pb-md" color="white" background-color="#FF0000">Auto shade the leaf by passing CSS color (e.g. #FF0000)</q-ribbon>
+
+        <q-ribbon class="q-pb-md"><q-icon name="home" /></q-ribbon>
+
+        <div class="flex justify-between">
+          <q-ribbon class="q-pb-md" inline>Inline Left Ribbon</q-ribbon>
+          <q-ribbon class="q-pb-md" position="right" leaf-position="top" decoration="rounded-in" inline>Inline Right Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon color="purple" leaf-color="purple" background-color="orange" position="right">Hippy Ribbon</q-ribbon>
-        </div>
+        <q-ribbon class="q-pb-md" position="right" decoration="rounded-out">Right Ribbon</q-ribbon>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon color="yellow" leaf-color="blue" background-color="green" position="right">Different Leaf Color - Hippy Ribbon</q-ribbon>
-        </div>
+        <q-ribbon class="q-pb-md qribbon-avatar" position="right" decoration="rounded-out">
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/img/avatar.png">
+          </q-avatar>
+        </q-ribbon>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon class="text-center" size="full">Full Ribbon (.text-center)</q-ribbon>
-        </div>
+        <q-ribbon class="q-pb-md" color="purple" leaf-color="purple" background-color="orange" position="right">Hippy Ribbon</q-ribbon>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon size="full">
-            <marquee>Let's Marquee!</marquee>
-          </q-ribbon>
-        </div>
+        <q-ribbon class="q-pb-md" color="yellow" leaf-color="blue" background-color="green" position="right">Different Leaf Color - Hippy Ribbon</q-ribbon>
 
-        <div class="ribbon-wrapper">
-          <q-ribbon class="text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
-        </div>
+        <q-ribbon class="q-pb-md text-center border-radius-top" size="full">Full Ribbon (.text-center) with border-radius</q-ribbon>
+
+        <q-ribbon class="q-pb-md" size="full">
+          <marquee>Let's Marquee!</marquee>
+        </q-ribbon>
+
+        <q-ribbon class="q-pb-md text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
       </div>
     </q-card>
 
@@ -188,4 +235,20 @@ export default {
         transform: rotate(45deg)
         text-decoration none
         padding 2px 0
+
+  .qribbon-avatar
+    [class*=horizontal--right].decorate-rounded-out
+      border-top-left-radius 45px
+      border-bottom-left-radius 45px
+      padding-left 5px
+
+  .q-toolbar.qribbon
+    padding-left 0
+
+  .border-radius-top
+    [class^=qribbon__]
+      border-radius 5px 5px 0 0
+
+  .example-title
+    white-space unset
 </style>

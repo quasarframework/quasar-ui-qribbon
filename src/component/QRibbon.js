@@ -61,7 +61,8 @@ export default Vue.extend({
         'triangle-in',
         'triangle-out'
       ].includes(val)
-    }
+    },
+    inline: Boolean
   },
 
   computed: {
@@ -91,7 +92,7 @@ export default Vue.extend({
     },
 
     __renderDefaultRibbon (h) {
-      return this.__renderBaseRibbon(h, [ h('div', slot(this, 'default')) ])
+      return this.__renderBaseRibbon(h)
     },
 
     __renderCornerRibbon (h) {
@@ -110,7 +111,7 @@ export default Vue.extend({
 
   render (h) {
     return h('div', {
-      staticClass: 'qribbon__container'
+      staticClass: `qribbon__container ${this.position} ${this.inline ? 'inline' : ''}`
     }, [
       this.__renderRibbon(h)
     ])
