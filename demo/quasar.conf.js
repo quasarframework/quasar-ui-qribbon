@@ -67,7 +67,8 @@ module.exports = function (ctx) {
 
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
+      publicPath: 'app-extension-qribbon',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
