@@ -50,6 +50,9 @@ Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master
 | size | String | `null` | Acceptable option is `full` to fill the container. |
 | decoration | String | `null` | Cannot be used with `corner` type ribbon. Acceptable options are `rounded-in`, `rounded-out`, `point-in`, `point-out`. |
 | inline | Boolean | `false` | Used when 2 QRibbons are required to be inline (on left and right along the same X axis). Bith QRibbon's must be wrapped in a `<div class="flex justify-between"></div>`. |
+| glow | Boolean | `false` | Add a moving glow to the ribbon. |
+| glow-speed | Number | `1.5` | The duration it takes for the animation to complete. |
+| glow-iteration-count | String | `infinite` | A number or string representing how many times the animation will run. |
 
 ## Vue Slots
 | Slot Name | Description |

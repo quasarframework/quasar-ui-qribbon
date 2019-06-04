@@ -101,9 +101,7 @@
           </q-ribbon>
         </q-toolbar>
 
-        <q-ribbon class="q-pb-md border-radius" glow>With border radius - GLOWING!</q-ribbon>
-
-        <q-ribbon class="q-pb-md border-radius" glow glow-speed="4" glow-iteration-count="5">Glow 5 times for 4 seconds each</q-ribbon>
+        <q-ribbon class="q-pb-md border-radius">With border radius</q-ribbon>
 
         <q-ribbon class="q-pb-md" color="red" background-color="yellow" decoration="point-out">Hippy Ribbon</q-ribbon>
 
@@ -113,7 +111,7 @@
 
         <div class="flex justify-between">
           <q-ribbon class="q-pb-md" inline>Inline Left Ribbon</q-ribbon>
-          <q-ribbon class="q-pb-md" position="right" leaf-position="top" decoration="rounded-in" inline glow>Inline Right Ribbon</q-ribbon>
+          <q-ribbon class="q-pb-md" position="right" leaf-position="top" decoration="rounded-in" inline>Inline Right Ribbon</q-ribbon>
         </div>
 
         <q-ribbon class="q-pb-md" position="right" decoration="rounded-out">Right Ribbon</q-ribbon>
@@ -134,7 +132,7 @@
           <marquee>Let's Marquee!</marquee>
         </q-ribbon>
 
-        <q-ribbon class="q-pb-md text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow" glow>Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
+        <q-ribbon class="q-pb-md text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow">Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
       </div>
     </q-card>
 
@@ -147,11 +145,11 @@
 
       <div class="box-ribbon-wrapper q-py-md">
         <div class="ribbon-wrapper">
-          <q-ribbon type="vertical" position="top-left" leaf-position="right" glow>Top Down Ribbon</q-ribbon>
+          <q-ribbon type="vertical" position="top-left" leaf-position="right">Top Down Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper">
-          <q-ribbon type="vertical" position="bottom-left" leaf-position="left" glow>Bottom Up Ribbon</q-ribbon>
+          <q-ribbon type="vertical" position="bottom-left" leaf-position="left">Bottom Up Ribbon</q-ribbon>
         </div>
 
         <div class="ribbon-wrapper move-50">
