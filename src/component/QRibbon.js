@@ -30,6 +30,7 @@ export default Vue.extend({
         'right'
       ].includes(val)
     },
+
     type: {
       type: String,
       default: 'horizontal',
@@ -39,6 +40,7 @@ export default Vue.extend({
         'corner'
       ].includes(val)
     },
+
     leafPosition: {
       type: String,
       default: 'bottom',
@@ -49,12 +51,14 @@ export default Vue.extend({
         'right'
       ].includes(val)
     },
+
     size: {
       type: String,
       validator: (val) => [
         'full'
       ].includes(val)
     },
+
     decoration: {
       type: String,
       validator: (val) => [
@@ -64,6 +68,17 @@ export default Vue.extend({
         'triangle-out'
       ].includes(val)
     },
+
+    glow: Boolean,
+    glowSpeed: {
+      type: Number,
+      default: 1.5
+    },
+    glowIterationCount: {
+      type: String,
+      default: 'infinite'
+    },
+
     inline: Boolean
   },
 
@@ -75,30 +90,45 @@ export default Vue.extend({
       if (this.decoration !== void 0) className += ` decorate-${this.decoration}`
       return className
     },
+    ribbonContainerClass () {
+      return `qribbon__container ${this.position} ${this.inline ? 'inline' : ''}`
+    },
     styles () {
       let style = {}
       style['--qribbon-text-color'] = this.color
       style['--qribbon-background-color'] = this.backgroundColor
       style['--qribbon-leaf-color'] = this.leafColor || this.__leafColor
+      style['--qribbon-glow-speed'] = `${this.glowSpeed}s`
+      style['--qribbon-glow-iteration-count'] = this.glowIterationCount
       return style
     }
   },
 
   methods: {
-    __renderBaseRibbon (h, children) {
-      const lastParam = children || slot(this, 'default')
+    __renderDefaultRibbon (h) {
       return h('div', {
         staticClass: this.ribbonClass,
         style: this.styles
-      }, lastParam)
-    },
-
-    __renderDefaultRibbon (h) {
-      return this.__renderBaseRibbon(h)
+      }, [
+        this.glow ? h('div', {
+          staticClass: 'glow'
+        }) : null,
+        slot(this, 'default')
+      ])
     },
 
     __renderCornerRibbon (h) {
-      return this.__renderBaseRibbon(h, [ h('div', slot(this, 'default')) ])
+      return h('div', {
+        staticClass: this.ribbonClass,
+        style: this.styles
+      }, [
+          h('div', [
+          this.glow ? h('div', {
+            staticClass: 'glow'
+          }) : null,
+          slot(this, 'default')
+        ])
+      ])
     },
 
     __renderRibbon (h) {
@@ -113,7 +143,7 @@ export default Vue.extend({
 
   render (h) {
     return h('div', {
-      staticClass: `qribbon__container ${this.position} ${this.inline ? 'inline' : ''}`
+      staticClass: this.ribbonContainerClass
     }, [
       this.__renderRibbon(h)
     ])
