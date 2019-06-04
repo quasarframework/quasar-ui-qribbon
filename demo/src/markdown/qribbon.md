@@ -24,13 +24,13 @@ You can use `quasar describe QRibbon` (to be implemented before QRibbon v1 relea
 Can be found [here](https://github.com/webnoob/app-extension-qribbon/).
 
 # Docs
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/docs).
+Can be found [here](https://webnoob.github.io/app-extension-qribbon/).
 
 # Examples
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/examples).
+Can be found [here](https://webnoob.github.io/app-extension-qribbon/examples).
 
 # Interactive Demo / QRibbon Builder
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/builder).
+Can be found [here](https://webnoob.github.io/app-extension-qribbon/builder).
 
 # Demo (source) Project
 Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master/demo).
