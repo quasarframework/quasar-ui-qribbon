@@ -18,13 +18,13 @@ Please check out the [documentation](https://webnoob.github.io/app-extension-qri
 # Install
 To add this App Extension to your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext add @quasar/qribbon
+quasar ext add qribbon
 ```
 
 # Uninstall
 To remove this App Extension from your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext remove @quasar/qribbon
+quasar ext remove qribbon
 ```
 
 # Describe
