@@ -64,8 +64,8 @@ export default Vue.extend({
       validator: (val) => [
         'rounded-in',
         'rounded-out',
-        'triangle-in',
-        'triangle-out'
+        'point-in',
+        'point-out'
       ].includes(val)
     },
 
