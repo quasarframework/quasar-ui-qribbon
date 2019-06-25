@@ -6,7 +6,7 @@ QRibbon (qribbon)
 ![npm (scoped)](https://img.shields.io/npm/v/quasar-app-extension-qribbon.svg?style=plastic)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/webnoob/app-extension-qribbon.svg)]()
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/webnoob/app-extension-qribbon.svg)]()
-[![npm](https://img.shields.io/npm/dt/@quasar/quasar-app-extension-qribbon.svg)](https://www.npmjs.com/package/quasar-app-extension-qribbon)
+[![npm](https://img.shields.io/npm/dt/quasar-app-extension-qribbon.svg)](https://www.npmjs.com/package/quasar-app-extension-qribbon)
 
 QRibbon is an `UI App Extension` for [Quasar Framework v1](https://quasar.dev/). It will not work with legacy versions of Quasar Framework.
 
