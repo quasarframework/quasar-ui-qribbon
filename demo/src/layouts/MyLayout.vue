@@ -27,7 +27,7 @@
     >
       <q-list>
         <q-item-label header>QRibbon</q-item-label>
-        <q-item clickable to="/">
+        <q-item clickable to="/docs">
           <q-item-section avatar>
             <q-icon name="home" />
           </q-item-section>

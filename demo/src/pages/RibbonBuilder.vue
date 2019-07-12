@@ -9,6 +9,7 @@
 
       <q-card-section class="q-pa-none q-py-md">
         <q-ribbon
+          class="q-pb-md"
           :position="getPosition"
           :type="type"
           :color="color"
@@ -17,7 +18,9 @@
           :leaf-position="leafPosition"
           :size="full ? 'full' : void 0"
           :decoration="decoration"
-          class="q-pb-md"
+          :glow="glow"
+          :glow-speed="glowSpeed"
+          :glow-iteration-count="glowIterationCount"
         >
           {{content}}
         </q-ribbon>
@@ -136,6 +139,29 @@
               class="q-pt-xs"
               v-if="!isCorner"
             />
+
+            <q-checkbox
+              v-model="glow"
+              label="Glow?"
+              class="q-pt-xs"
+            />
+
+            <div class="col-xs-12" v-if="glow">
+              <div class="row justify-between">
+                <q-input
+                  v-model="glowSpeed"
+                  class="col-xs-12 col-sm-5"
+                  label="Glow Speed"
+                  type="number"
+                />
+
+                <q-input
+                  v-model="glowIterationCount"
+                  class="col-xs-12 col-sm-5"
+                  label="Glow Count"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </q-card-section>
@@ -171,7 +197,10 @@ function initialState () {
     leafColor: '',
     content: 'My Ribbon',
     full: false,
-    decoration: null
+    decoration: null,
+    glow: false,
+    glowSpeed: 1.5,
+    glowIterationCount: 'infinite'
   }
 }
 
@@ -252,11 +281,22 @@ export default {
       return foundPosition ? foundPosition.value : positionOptions[0].value
     },
     componentOutput () {
+      const defaults = initialState()
       const leaf = this.leafColor ? ` leaf-color="${this.leafColor}"` : ''
-      const type = this.type === 'horizontal' ? '' : ` type="${this.type}"`
-      const full = this.full ? ` size="full"` : ''
+      const type = this.type === defaults.type ? '' : ` type="${this.type}"`
+      const full = this.full ? `size="full"` : ''
       const decoration = this.decoration ? ` decoration="${this.decoration}"` : ''
-      return `<q-ribbon${type} position="${this.getPosition}" color="${this.color}" background-color="${this.backgroundColor}" leaf-position="${this.leafPosition}"${leaf}${full}${decoration}></q-ribbon>`
+      const glow = this.glow ? ` glow` : ''
+      const glowSpeed = !this.glow || this.glowSpeed === defaults.glowSpeed ? '' : ` glow-speed="${this.glowSpeed}"`
+      const glowIterationCount = !this.glow || this.glowIterationCount === defaults.glowIterationCount ? '' : ` glow-iteration-count="${this.glowIterationCount}"`
+      return `<q-ribbon${type}
+        position="${this.getPosition}"
+        color="${this.color}"
+        background-color="${this.backgroundColor}"
+        leaf-position="${this.leafPosition}"
+        ${full}${leaf}${decoration}${glow}${glowSpeed}${glowIterationCount}>
+            My Ribbon
+        </q-ribbon>`
     },
     isCorner () {
       return this.type === 'corner'

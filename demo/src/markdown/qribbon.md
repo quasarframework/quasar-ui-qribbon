@@ -1,4 +1,4 @@
-QRibbon
+QRibbon (@quasar/qribbon)
 ===
 
 > Please note, this is currently a work-in-progress (WIP).
@@ -8,32 +8,32 @@ QRibbon is a [Quasar App Extension](https://quasar.dev/app-extensions/introducti
 # Install
 To add this App Extension to your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext add qribbon
+quasar ext add @quasar/qribbon
 ```
 
 # Uninstall
 To remove this App Extension from your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext remove qribbon
+quasar ext remove @quasar/qribbon
 ```
 
 # Describe
 You can use `quasar describe QRibbon` (to be implemented before QRibbon v1 release)
 
 # Source
-Can be found [here](https://github.com/webnoob/app-extension-qribbon/).
+Can be found [here](https://github.com/quasarframework/app-extension-qribbon/).
 
 # Docs
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/).
 
 # Examples
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/examples).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/examples).
 
 # Interactive Demo / QRibbon Builder
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/demo/dist/spa/#/builder).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/builder).
 
 # Demo (source) Project
-Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master/demo).
+Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tree/master/demo).
 
 # QRibbon API
 
@@ -50,6 +50,9 @@ Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master
 | size | String | `null` | Acceptable option is `full` to fill the container. |
 | decoration | String | `null` | Cannot be used with `corner` type ribbon. Acceptable options are `rounded-in`, `rounded-out`, `point-in`, `point-out`. |
 | inline | Boolean | `false` | Used when 2 QRibbons are required to be inline (on left and right along the same X axis). Bith QRibbon's must be wrapped in a `<div class="flex justify-between"></div>`. |
+| glow | Boolean | `false` | Add a moving glow to the ribbon. |
+| glow-speed | Number | `1.5` | The duration it takes for the animation to complete. |
+| glow-iteration-count | String | `infinite` | A number or string representing how many times the animation will run. |
 
 ## Vue Slots
 | Slot Name | Description |
