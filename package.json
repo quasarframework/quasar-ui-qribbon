@@ -1,5 +1,5 @@
 {
-  "name": "quasar-app-extension-qribbon",
+  "name": "@quasar/quasar-app-extension-qribbon",
   "version": "1.0.0-alpha.8",
   "description": "QRibbon - Quasar App Extension",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
