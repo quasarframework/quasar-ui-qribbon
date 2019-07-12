@@ -187,7 +187,7 @@
         <div class="box-ribbon-wrapper">
           <q-ribbon position="top-left" type="corner" glow>Glow Top Left</q-ribbon>
           <q-ribbon class="github-text" position="top-right" type="corner" color="white" background-color="#5b5e63">
-            <a href="https://github.com/webnoob/app-extension-qribbon" target="_blank">FORK ME ON GITHUB!</a>
+            <a href="https://github.com/quasarframework/app-extension-qribbon" target="_blank">FORK ME ON GITHUB!</a>
           </q-ribbon>
           <q-ribbon class="qribbon-bottom" position="bottom-left" type="corner"><span class="rotate-270">Bottom Left</span></q-ribbon>
           <q-ribbon class="qribbon-bottom" position="bottom-right" type="corner">Bottom Right</q-ribbon>

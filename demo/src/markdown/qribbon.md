@@ -1,4 +1,4 @@
-QRibbon
+QRibbon (@quasar/qribbon)
 ===
 
 > Please note, this is currently a work-in-progress (WIP).
@@ -8,32 +8,32 @@ QRibbon is a [Quasar App Extension](https://quasar.dev/app-extensions/introducti
 # Install
 To add this App Extension to your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext add qribbon
+quasar ext add @quasar/qribbon
 ```
 
 # Uninstall
 To remove this App Extension from your Quasar application, run the following (in your Quasar app folder):
 ```
-quasar ext remove qribbon
+quasar ext remove @quasar/qribbon
 ```
 
 # Describe
 You can use `quasar describe QRibbon` (to be implemented before QRibbon v1 release)
 
 # Source
-Can be found [here](https://github.com/webnoob/app-extension-qribbon/).
+Can be found [here](https://github.com/quasarframework/app-extension-qribbon/).
 
 # Docs
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/).
 
 # Examples
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/examples).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/examples).
 
 # Interactive Demo / QRibbon Builder
-Can be found [here](https://webnoob.github.io/app-extension-qribbon/builder).
+Can be found [here](https://quasarframework.github.io/app-extension-qribbon/builder).
 
 # Demo (source) Project
-Can be found [here](https://github.com/webnoob/app-extension-qribbon/tree/master/demo).
+Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tree/master/demo).
 
 # QRibbon API
 

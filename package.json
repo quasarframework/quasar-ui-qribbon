@@ -19,12 +19,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "bugs": "https://github.com/webnoob/app-extension-qribbon/issues",
+  "bugs": "https://github.com/quasarframework/app-extension-qribbon/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webnoob/app-extension-qribbon.git"
+    "url": "git+https://github.com/quasarframework/app-extension-qribbon.git"
   },
-  "homepage": "https://github.com/webnoob/app-extension-qribbon",
+  "homepage": "https://github.com/quasarframework/app-extension-qribbon",
   "keywords": [
     "quasar",
     "app",
