@@ -24,7 +24,7 @@
     "eslint": "^5.10.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.0.0",
-    "quasar-app-extension-qribbon": "link:../."
+    "@quasar/quasar-app-extension-qribbon": "link:../."
   },
   "engines": {
     "node": ">= 8.9.0",
