@@ -1,6 +1,6 @@
 {
   "name": "@quasar/quasar-app-extension-qribbon",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-beta.1",
   "description": "QRibbon - Quasar App Extension",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
   "license": "MIT",
