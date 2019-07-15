@@ -1,0 +1,5 @@
+:root
+  $colors = ('red' 'pink' 'purple' 'deep-purple' 'indigo' 'blue' 'light-blue' 'cyan' 'teal' 'green' 'light-green' 'lime' 'yellow' 'amber' 'orange' 'deep-orange' 'brown' 'grey' 'blue-grey')
+  for $num in range(0 (length($colors) - 1))
+    for $colorNum in (1..10)
+      --q-color-{$colors[$num]}-{$colorNum}: lookup('$' + $colors[$num] + '-' + $colorNum)

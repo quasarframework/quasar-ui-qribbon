@@ -2,8 +2,14 @@ import Vue from 'vue'
 import { colors } from 'quasar'
 const { lighten } = colors
 
+const CSS_COLOR_NAMES = ['aliceblue','antiquewhite','aqua','aquamarine','azure','beige','bisque','black','blanchedalmond','blue','blueviolet','brown','burlywood','cadetblue','chartreuse','chocolate','coral','cornflowerblue','cornsilk','crimson','cyan','darkblue','darkcyan','darkgoldenrod','darkgray','darkgrey','darkgreen','darkkhaki','darkmagenta','darkolivegreen','darkorange','darkorchid','darkred','darksalmon','darkseagreen','darkslateblue','darkslategray','darkslategrey','darkturquoise','darkviolet','deeppink','deepskyblue','dimgray','dimgrey','dodgerblue','firebrick','floralwhite','forestgreen','fuchsia','gainsboro','ghostwhite','gold','goldenrod','gray','grey','green','greenyellow','honeydew','hotpink','indianred','indigo','ivory','khaki','lavender','lavenderblush','lawngreen','lemonchiffon','lightblue','lightcoral','lightcyan','lightgoldenrodyellow','lightgray','lightgrey','lightgreen','lightpink','lightsalmon','lightseagreen','lightskyblue','lightslategray','lightslategrey','lightsteelblue','lightyellow','lime','limegreen','linen','magenta','maroon','mediumaquamarine','mediumblue','mediumorchid','mediumpurple','mediumseagreen','mediumslateblue','mediumspringgreen','mediumturquoise','mediumvioletred','midnightblue','mintcream','mistyrose','moccasin','navajowhite','navy','oldlace','olive','olivedrab','orange','orangered','orchid','palegoldenrod','palegreen','paleturquoise','palevioletred','papayawhip','peachpuff','peru','pink','plum','powderblue','purple','red','rosybrown','royalblue','saddlebrown','salmon','sandybrown','seagreen','seashell','sienna','silver','skyblue','slateblue','slategray','slategrey','snow','springgreen','steelblue','tan','teal','thistle','tomato','turquoise','violet','wheat','white','whitesmoke','yellow','yellowgreen']
+
+function isNamedCssColor (color) {
+  return !!color && CSS_COLOR_NAMES.includes(color.toLowerCase())
+}
+
 function isCssColor (color) {
-  return !!color && !!color.match(/^(#|(rgb|hsl)a?\()/)
+  return !!color && (!!color.match(/^(#|(rgb|hsl)a?\()/) || isNamedCssColor(color))
 }
 
 export default Vue.extend({
@@ -29,58 +35,36 @@ export default Vue.extend({
     }
   },
   
-  methods: {
-    setBothColors (color, bgColor, data = {}) {
-      return this.setTextColor(color, this.setBackgroundColor(bgColor, data))
+  computed: {
+    bgColor () {
+      return this.getColor(this.backgroundColor, '#027BE3')
     },
-    
-    setBackgroundColor (color, data = {}) {
-      if (isCssColor(color)) {
-        data.style = {
-          ...data.style,
-          'background-color': `${color}`,
-          'border-color': `${color}`
-        }
-      } else if (color) {
-        const colorName = color.toString().trim()
-        data.class = {
-          ...data.class,
-          ['bg-' + colorName]: true
-        }
-        console.log(data.class)
-      }
-      
-      return data
+    textColor () {
+      return this.getColor(this.color, 'white')
     },
-    
-    setTextColor (color, data = {}) {
-      if (isCssColor(color)) {
-        data.style = {
-          ...data.style,
-          'color': `${color}`,
-          'caret-color': `${color}`
-        }
-      } else if (color) {
-        const colorName = color.toString().trim()
-        data.class = {
-          ...data.class,
-          ['text-' + colorName]: true
-        }
-      }
-      return data
-    },
-    
-    __setLeafColor () {
-      this.__leafColor = this.leafColor
-        ? this.leafColor
-        : isCssColor(this.backgroundColor)
-          ? lighten(this.backgroundColor, -25)
-          : this.backgroundColor
+    bgLeafColor () {
+      // TODO: Perhaps nesting ternary statements "can" get too much ... :D
+      return this.leafColor // if leaf is defined then
+        ? isCssColor(this.leafColor) // check to see if it's a CSS color
+          ? this.leafColor // and just return it if so
+          : this.makeQuasarColorVar(this.leafColor) // otherwise convert it to a quasar color
+        : isCssColor(this.backgroundColor) && !isNamedCssColor(this.backgroundColor) // if leftColor not defined is bgColor a hex color
+          ? lighten(this.backgroundColor, -25) // then we can lighten it
+          : isCssColor(this.backgroundColor) //otherwise check and see if bgColor is a CSS color
+            ? this.backgroundColor // and just return it
+            : this.makeQuasarColorVar(this.backgroundColor, this.color) // otherwise return a quasar color.
     }
   },
   
-  created () {
-    this.__setLeafColor()
+  methods: {
+    getColor (color, defaultColor) {
+      return isCssColor(color)
+        ? color
+        : this.makeQuasarColorVar(color, defaultColor)
+    },
+    makeQuasarColorVar (color, defaultColor) {
+      return `var(--q-color-${color}, '${defaultColor}')`
+    }
   }
   
 })

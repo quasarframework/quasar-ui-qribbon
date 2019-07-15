@@ -26,18 +26,33 @@
         </q-ribbon>
 
         <div class="q-pa-sm">
+          <q-select
+            label="Color Mode"
+            class="col-xs-12"
+            v-model="colorMode"
+            map-options
+            emit-value
+            :options="[
+                { value: 'css', label: 'CSS' },
+                { value: 'quasar', label: 'Quasar / Text' }
+              ]"
+          />
+
           <div class="row justify-around q-mt-lg gt-xs">
             <div class="text-center">
               Text Color
-              <q-color v-model="color" no-header no-footer />
+              <q-color v-model="color" v-if="cssColorMode" no-header no-footer />
+              <q-input v-model="color" v-else />
             </div>
             <div class="text-center">
               Background Color
-              <q-color v-model="backgroundColor" no-header no-footer />
+              <q-color v-model="backgroundColor" v-if="cssColorMode" no-header no-footer />
+              <q-input v-model="backgroundColor" v-else />
             </div>
             <div class="text-center">
               Leaf Color
-              <q-color v-model="leafColor" no-header no-footer />
+              <q-color v-model="leafColor" v-if="cssColorMode" no-header no-footer />
+              <q-input v-model="leafColor" v-else />
             </div>
           </div>
 
@@ -200,7 +215,8 @@ function initialState () {
     decoration: null,
     glow: false,
     glowSpeed: 1.5,
-    glowIterationCount: 'infinite'
+    glowIterationCount: 'infinite',
+    colorMode: 'css'
   }
 }
 
@@ -208,6 +224,9 @@ export default {
   name: 'InteractiveDemo',
 
   computed: {
+    cssColorMode () {
+      return this.colorMode === 'css'
+    },
     positionOptions () {
       switch (this.type) {
         case 'corner':

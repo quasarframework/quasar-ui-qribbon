@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 // Styles
+import './styl/common/qColors.styl'
 import './styl/common/glow.styl'
 import './styl/horizontal/main.styl'
 import './styl/vertical/main.styl'
@@ -95,9 +96,9 @@ export default Vue.extend({
     },
     styles () {
       let style = {}
-      style['--qribbon-text-color'] = this.color
-      style['--qribbon-background-color'] = this.backgroundColor
-      style['--qribbon-leaf-color'] = this.leafColor || this.__leafColor
+      style['--qribbon-text-color'] = this.textColor
+      style['--qribbon-background-color'] = this.bgColor
+      style['--qribbon-leaf-color'] = this.bgLeafColor
       style['--qribbon-glow-speed'] = `${this.glowSpeed}s`
       style['--qribbon-glow-iteration-count'] = this.glowIterationCount
       return style
