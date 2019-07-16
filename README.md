@@ -36,3 +36,6 @@ Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tre
 
 # Documentation and Examples
 Can be found [here](https://quasarframework.github.io/app-extension-qribbon/docs).
+
+# Donate
+If you appreciate the work that went into this app extension, please consider [donating to Quasar](https://donate.quasar.dev).

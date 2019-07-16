@@ -63,3 +63,6 @@ Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tre
 This page created with [QMarkdown](https://quasarframework.github.io/app-extension-qmarkdown), another great Quasar App Extension.
 
 QRibbon uses [quasar-mixin-colorize](https://github.com/hawkeye64/quasar-mixin-colorize) to perform the awesome color management for the color and backgroundColor props.
+
+# Donate
+If you appreciate the work that went into this app extension, please consider [donating to Quasar](https://donate.quasar.dev).
