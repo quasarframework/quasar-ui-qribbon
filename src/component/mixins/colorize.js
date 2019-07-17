@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Colorize, { isCssColor, makeQuasarColorVar, isNamedCssColor } from 'quasar-mixin-colorize'
+import { Colorize, isCssColor, makeQuasarColorVar, isNamedCssColor } from 'quasar-mixin-colorize'
 import { colors } from 'quasar'
 const { lighten } = colors
 
