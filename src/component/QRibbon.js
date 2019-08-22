@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 // Styles
+import 'quasar-mixin-colorize/src/qColors.styl'
 import './styl/common/glow.styl'
 import './styl/horizontal/main.styl'
 import './styl/vertical/main.styl'
@@ -10,12 +11,13 @@ import './styl/corner/main.styl'
 import slot from 'quasar/src/utils/slot.js'
 
 // Mixins
-import Colorize from './mixins/colorize'
+import { calculateColor } from 'quasar-mixin-colorize'
+import QRibbonColorize from './mixins/colorize'
 
 export default Vue.extend({
   name: 'QRibbon',
 
-  mixins: [ Colorize ],
+  mixins: [ QRibbonColorize ],
 
   props: {
     position: {
@@ -79,7 +81,12 @@ export default Vue.extend({
       default: 'infinite'
     },
 
-    inline: Boolean
+    inline: Boolean,
+    
+    backgroundColor: {
+      type: String,
+      default: 'primary'
+    }
   },
 
   computed: {
@@ -95,9 +102,9 @@ export default Vue.extend({
     },
     styles () {
       let style = {}
-      style['--qribbon-text-color'] = this.color
-      style['--qribbon-background-color'] = this.backgroundColor
-      style['--qribbon-leaf-color'] = this.leafColor || this.__leafColor
+      style['--qribbon-text-color'] = calculateColor(this.color, 'white')
+      style['--qribbon-background-color'] = calculateColor(this.backgroundColor)
+      style['--qribbon-leaf-color'] = this.bgLeafColor
       style['--qribbon-glow-speed'] = `${this.glowSpeed}s`
       style['--qribbon-glow-iteration-count'] = this.glowIterationCount
       return style
@@ -148,5 +155,4 @@ export default Vue.extend({
       this.__renderRibbon(h)
     ])
   }
-
 })

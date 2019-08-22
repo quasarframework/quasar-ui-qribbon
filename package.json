@@ -1,6 +1,6 @@
 {
   "name": "@quasar/quasar-app-extension-qribbon",
-  "version": "1.0.0-alpha.9",
+  "version": "1.0.0-beta.3",
   "description": "QRibbon - Quasar App Extension",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
   "license": "MIT",
@@ -40,5 +40,8 @@
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "^5.2.2"
+  },
+  "dependencies": {
+    "quasar-mixin-colorize": "^1.0.0-alpha.4"
   }
 }

@@ -43,8 +43,8 @@ Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tre
 | --- | --- | --- | --- |
 | type | String | `horizontal` | Acceptable options are `horizontal`, `corner`, `vertical` |
 | position | String | `left` or `top-left` | Acceptable strings are: <br/> Type==`horizontal`: `left`, `right`, `full`<br/> Type==`corner`or`vertical`: `top left`, `top right`, `bottom left`, `bottom right` |
-| color | String | `white` | CSS Color for the text |
-| background-color | String | `#027BE3` | CSS Color for the background |
+| color | String | `white` | Set the text color using any CSS color, Quasar Color or CSS var pointing to a color  |
+| background-color | String | `#027BE3` | Set the background color using any CSS color, Quasar Color or CSS var pointing to a color |
 | leaf-color | String | Auto shaded based on `background-color` | CSS Color for the leaf |
 | leaf-position | String | `bottom` or `left` | Acceptable strings are: <br/> Type==`horizontal`: `top`, `bottom`<br/> Type==`vertical`: `left`, `right` |
 | size | String | `null` | Acceptable option is `full` to fill the container. |
@@ -61,3 +61,8 @@ Can be found [here](https://github.com/quasarframework/app-extension-qribbon/tre
 
 ---
 This page created with [QMarkdown](https://quasarframework.github.io/app-extension-qmarkdown), another great Quasar App Extension.
+
+QRibbon uses [quasar-mixin-colorize](https://github.com/hawkeye64/quasar-mixin-colorize) to perform the awesome color management for the color and backgroundColor props.
+
+# Donate
+If you appreciate the work that went into this app extension, please consider [donating to Quasar](https://donate.quasar.dev).

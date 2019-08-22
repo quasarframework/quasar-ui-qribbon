@@ -1,13 +1,10 @@
 import Vue from 'vue'
+import { Colorize, isCssColor, makeQuasarColorVar, isNamedCssColor } from 'quasar-mixin-colorize'
 import { colors } from 'quasar'
 const { lighten } = colors
 
-function isCssColor (color) {
-  return !!color && !!color.match(/^(#|(rgb|hsl)a?\()/)
-}
-
 export default Vue.extend({
-  name: 'colorize',
+  name: 'qribbon-colorize',
   
   data () {
     return {
@@ -15,72 +12,26 @@ export default Vue.extend({
     }
   },
   
+  mixins: [ Colorize ],
+  
   props: {
-    color: {
-      type: String,
-      default: 'white'
-    },
-    backgroundColor: {
-      type: String,
-      default: '#027BE3'
-    },
     leafColor: {
       type: String
     }
   },
   
-  methods: {
-    setBothColors (color, bgColor, data = {}) {
-      return this.setTextColor(color, this.setBackgroundColor(bgColor, data))
-    },
-    
-    setBackgroundColor (color, data = {}) {
-      if (isCssColor(color)) {
-        data.style = {
-          ...data.style,
-          'background-color': `${color}`,
-          'border-color': `${color}`
-        }
-      } else if (color) {
-        const colorName = color.toString().trim()
-        data.class = {
-          ...data.class,
-          ['bg-' + colorName]: true
-        }
-        console.log(data.class)
-      }
-      
-      return data
-    },
-    
-    setTextColor (color, data = {}) {
-      if (isCssColor(color)) {
-        data.style = {
-          ...data.style,
-          'color': `${color}`,
-          'caret-color': `${color}`
-        }
-      } else if (color) {
-        const colorName = color.toString().trim()
-        data.class = {
-          ...data.class,
-          ['text-' + colorName]: true
-        }
-      }
-      return data
-    },
-    
-    __setLeafColor () {
-      this.__leafColor = this.leafColor
-        ? this.leafColor
-        : isCssColor(this.backgroundColor)
-          ? lighten(this.backgroundColor, -25)
-          : this.backgroundColor
+  computed: {
+    bgLeafColor () {
+      // TODO: Perhaps nesting ternary statements "can" get too much ... :D
+      return this.leafColor // if leaf is defined then
+        ? isCssColor(this.leafColor) // check to see if it's a CSS color
+          ? this.leafColor // and just return it if so
+          : makeQuasarColorVar(this.leafColor) // otherwise convert it to a quasar color
+        : isCssColor(this.backgroundColor) && !isNamedCssColor(this.backgroundColor) // if leftColor not defined is bgColor a hex color
+          ? lighten(this.backgroundColor, -25) // then we can lighten it
+          : isCssColor(this.backgroundColor) //otherwise check and see if bgColor is a CSS color
+            ? this.backgroundColor // and just return it
+            : makeQuasarColorVar(this.backgroundColor, this.color) // otherwise return a quasar color.
     }
-  },
-  
-  created () {
-    this.__setLeafColor()
   }
-  
 })

@@ -26,9 +26,9 @@
       <q-separator class="q-mb-lg" />
 
       <div class="box-ribbon-wrapper q-py-md">
-
         <div class="flex justify-between">
           <q-ribbon class="q-pb-md" leaf-position="top" decoration="point-in">Left Ribbon</q-ribbon>
+
           <q-ribbon class="q-pb-md cursor-pointer" leaf-position="top" decoration="point-out" position="right">
             QMenu QRibbon
             <q-menu anchor="center left" self="top right">
@@ -84,6 +84,11 @@
           </q-ribbon>
         </div>
 
+        <div class="flex justify-between">
+          <q-ribbon class="q-pb-md" decoration="point-in" background-color="secondary" inline>Quasar Color (secondary)</q-ribbon>
+          <q-ribbon class="q-pb-md" position="right" background-color="red-5" leaf-color="purple-3" inline>Quasar Color (red-5)</q-ribbon>
+        </div>
+
         <q-toolbar class="q-pb-md qribbon">
           <q-ribbon
             position="left"
@@ -103,7 +108,7 @@
 
         <q-ribbon class="q-pb-md border-radius" glow>With border radius - GLOWING!</q-ribbon>
 
-        <q-ribbon class="q-pb-md border-radius" glow glow-speed="4" glow-iteration-count="5">Glow 5 times for 4 seconds each</q-ribbon>
+        <q-ribbon class="q-pb-md border-radius" glow :glow-speed="4" glow-iteration-count="5">Glow 5 times for 4 seconds each</q-ribbon>
 
         <q-ribbon class="q-pb-md" color="red" background-color="yellow" decoration="point-out">Hippy Ribbon</q-ribbon>
 

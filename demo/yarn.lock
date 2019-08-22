@@ -1005,6 +1005,10 @@
     prismjs "^1.16.0"
     raw-loader "^2.0.0"
 
+"@quasar/quasar-app-extension-qribbon@link:..":
+  version "0.0.0"
+  uid ""
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -6460,9 +6464,6 @@ qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-
-"quasar-app-extension-qribbon@link:..":
-  version "1.0.0-alpha.8"
 
 quasar@^1.0.0:
   version "1.0.4"
