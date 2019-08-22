@@ -31,7 +31,7 @@ module.exports = function (api) {
   api.compatibleWith('@quasar/app', '^1.0.0')
 
   // register JSON api
-  // api.registerDescribeApi('QRibbon', './component/QRibbon.json')
+  api.registerDescribeApi('QRibbon', './component/QRibbon.json')
 
   // extend quasar.conf
   api.extendQuasarConf(extendConf)
