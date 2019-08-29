@@ -1,0 +1,112 @@
+{
+  "type": "component",
+  "props": {
+    "type": {
+      "type": "String",
+      "desc": "Tells the component which type of ribbon is to be used",
+      "default": "horizontal",
+      "values": [ "horizontal", "corner", "vertical" ],
+      "examples": [
+        "type=\"horizontal\"",
+        "type=\"vertical\""
+      ]
+    },
+    "position": {
+      "type": "String",
+      "desc": "Tells the component which position is to be used. If `horizontal`, then only `left` or `right` are applicable. Otherwise, the remaining positions can be used with `vertical` or `corner`",
+      "default": "`left` or `top-left`",
+      "values": [ "left", "right", "full", "top left", "top right", "bottom left", "bottom right" ],
+      "examples": [
+        "position=\"left\"",
+        "position=\"top right\""
+      ]
+    },
+    "color": {
+      "type": "String",
+      "desc": "Set the text color using any CSS color, Quasar Color or CSS var pointing to a color",
+      "default": "white",
+      "examples": [
+        "color=\"orange-8\"",
+        "color=\"--blue-grey-6\""
+      ]
+    },
+    "background-color": {
+      "type": "String",
+      "desc": "Set the background color using any CSS color, Quasar Color or CSS var pointing to a color",
+      "default": "#027BE3",
+      "examples": [
+        "background-color=\"orange-8\"",
+        "background-color=\"--blue-grey-6\""
+      ]
+    },
+    "leaf-color": {
+      "type": "String",
+      "desc": "CSS Color for the leaf",
+      "default": "Auto-shaded based on `background-color`",
+      "examples": [
+        "leaf-color=\"#6A687A\"",
+        "leaf-color=\"#536271\""
+      ]
+    },
+    "leaf-position": {
+      "type": "String",
+      "desc": "For `horizontal` use `top` or `bottom`, for `vertical` use `left` or `right`",
+      "default": "`bottom` or `left`",
+      "values": [ "top", "bottom", "left", "right" ],
+      "examples": [
+        "leaf-position=\"bottom\"",
+        "leaf-position=\"left\""
+      ]
+    },
+    "size": {
+      "type": "String",
+      "desc": "Use `full` to full the container",
+      "default": "null",
+      "values": [ "null", "full" ],
+      "examples": [
+        "size=\"full\""
+      ]
+    },
+    "decoration": {
+      "type": "String",
+      "desc": "The type of decoration to use with the ribbon. Cannot be used with `corner` type ribbon",
+      "default": "null",
+      "values": [ "null", "rounded-in", "rounded-out", "point-in", "point-out" ],
+      "examples": [
+        "decoration=\"rounded-in\"",
+        "decoration=\"point-out\""
+      ]
+    },
+    "inline": {
+      "type": "Boolean",
+      "desc": "Used when 2 QRibbons are required to be inline (on left and right along the same X axis). Both QRibbon's must be wrapped with the following: `<div class=\"flex justify-between\"></div>`"
+    },
+    "glow": {
+      "type": "Boolean",
+      "desc": "Add a moving glow to the ribbon"
+    },
+    "glow-speed": {
+      "type": "Number",
+      "desc": "The duration (in seconds) it takes for the animation to complete",
+      "default": "1.5",
+      "examples": [
+        ":glow-speed=\"3\"",
+        ":glow-speed=\"1.75\""
+      ]
+    },
+    "glow-iteration-count": {
+      "type": "String",
+      "desc": "A number or string representing how many times the animation will run",
+      "default": "infinite",
+      "examples": [
+        "glow-iteration-count=\"infinite\"",
+        "glow-iteration-count=\"10\""
+      ]
+    }
+  },
+  "slots": {
+    "default": {
+      "desc": "Any content can be entered into the default slot and it will show in the ribbon"
+    }
+  }
+}
