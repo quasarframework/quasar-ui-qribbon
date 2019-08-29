@@ -29,6 +29,7 @@ const extendConf = function (conf) {
 module.exports = function (api) {
   // quasar compatibility check
   api.compatibleWith('@quasar/app', '^1.0.0')
+  api.compatibleWith('@quasar/quasar-app-extension-colorize', '^1.0.0-alpha.1')
 
   // register JSON api
   api.registerDescribeApi('QRibbon', './component/QRibbon.json')
