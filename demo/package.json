@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "QRibbon Demo - A Quasar Framework app",
   "productName": "QRibbon Demo",
   "cordovaId": "org.cordova.quasar.app",
@@ -18,14 +18,20 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.0.5",
+    "@quasar/quasar-app-extension-colorize": "^1.0.0-alpha.1",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.0-beta.19",
-    "@quasar/quasar-app-extension-qpublish": "^1.0.0-alpha.5",
+    "@quasar/quasar-app-extension-qpublish": "^1.0.0-alpha.6",
     "@quasar/quasar-app-extension-qribbon": "link:../.",
     "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.10.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^5.0.0"
+    "babel-eslint": "^10.0.3",
+    "devtron": "^1.4.0",
+    "electron": "^5.0.0",
+    "electron-debug": "^3.0.0",
+    "electron-devtools-installer": "^2.2.4",
+    "eslint": "^6.2.2",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "quasar-app-extension-qautomate": "^1.0.0-alpha.5"
   },
   "engines": {
     "node": ">= 8.9.0",
