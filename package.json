@@ -36,12 +36,9 @@
   ],
   "devDependencies": {
     "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-vue": "^5.2.2"
-  },
-  "dependencies": {
-    "quasar-mixin-colorize": "^1.0.0-alpha.4"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.2.2",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-vue": "^5.2.3"
   }
 }
