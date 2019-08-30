@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "QRibbon Demo - A Quasar Framework app",
   "productName": "QRibbon Demo",
   "cordovaId": "org.cordova.quasar.app",
