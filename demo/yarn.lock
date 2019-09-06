@@ -1046,12 +1046,10 @@
     raw-loader "^3.1.0"
     ware-loader "^0.2.4"
 
-"@quasar/quasar-app-extension-qpublish@^1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qpublish/-/quasar-app-extension-qpublish-1.0.0-alpha.6.tgz#00126d1447ea925f35e15b5abdb1f927f9d29a4b"
-  integrity sha512-HCEwl2TZ8PUUMuCee7xqNQZeGOGD5ZrXSYI6ht+PeFbdUv7qdNCIt5LFkME8C8CdTTZIWZOkT4+M20f8dEOVxA==
-  dependencies:
-    quasar-mixin-colorize "^1.0.0-alpha.6"
+"@quasar/quasar-app-extension-qpublish@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qpublish/-/quasar-app-extension-qpublish-1.0.0-alpha.7.tgz#0ed96ce0cca2dfc73323226a3206628caa8ab238"
+  integrity sha512-FVhd3BSuwA2926bPmSnnCt1oXazjdjr1irxlmUsxq0UoibQK5j+vCBogoOBRv7PTGXHlwL1cxtJ173ArITjOpg==
 
 "@quasar/quasar-app-extension-qribbon@link:..":
   version "0.0.0"
@@ -7100,11 +7098,6 @@ quasar-app-extension-qautomate@^1.0.0-alpha.5:
     inquirer "^6.4.1"
     param-case "^2.1.1"
     ware-loader "^0.2.4"
-
-quasar-mixin-colorize@^1.0.0-alpha.6:
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/quasar-mixin-colorize/-/quasar-mixin-colorize-1.0.0-alpha.9.tgz#e19c433a5b3f40c4ce4ab5c6e8506f7cb6eb83bb"
-  integrity sha512-xg49b7Z68D2+zdDOgq/XntKKAd2Anl1kIsLI3dKS26CCNGARB1JjPH9+tKd+r2MCcMf3R6qf775/vPKbsDZ4BQ==
 
 quasar@^1.1.0:
   version "1.1.0"
