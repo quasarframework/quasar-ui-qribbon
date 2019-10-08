@@ -40,5 +40,8 @@
     "eslint": "^6.2.2",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-vue": "^5.2.3"
+  },
+  "dependencies": {
+    "q-colorize-mixin": "^1.0.0-alpha.3"
   }
 }

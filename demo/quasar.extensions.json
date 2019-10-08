@@ -1,6 +1,5 @@
 {
   "@quasar/qribbon": {},
   "@quasar/qmarkdown": {},
-  "@quasar/qpublish": {},
-  "@quasar/colorize": {}
+  "@quasar/qpublish": {}
 }
