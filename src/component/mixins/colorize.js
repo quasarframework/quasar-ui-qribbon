@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Colorize from '@quasar/quasar-app-extension-colorize/src/colorize.js'
+import { QColorizeMixin } from 'q-colorize-mixin'
 import { colors } from 'quasar'
 const { lighten } = colors
 
@@ -12,7 +12,7 @@ export default Vue.extend({
     }
   },
 
-  mixins: [ Colorize ],
+  mixins: [ QColorizeMixin ],
 
   props: {
     leafColor: {

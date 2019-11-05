@@ -284,7 +284,6 @@ export default {
     getLeafPosition () {
       const positionOptions = this.leafPositionOptions
       const foundPosition = positionOptions.find(f => {
-        console.log(f.value)
         return f.value === this.leafPositionVal
       })
 
@@ -293,7 +292,6 @@ export default {
     getPosition () {
       const positionOptions = this.positionOptions
       const foundPosition = positionOptions.find(f => {
-        console.log(f.value)
         return f.value === this.positionVal
       })
 
