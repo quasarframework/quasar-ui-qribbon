@@ -1,14 +1,17 @@
 // Configuration for your app
 
+const path = require('path')
+
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
+      'qribbon'
     ],
 
     css: [
-      'app.styl'
+      'app.sass'
     ],
 
     extras: [
@@ -70,7 +73,7 @@ module.exports = function (ctx) {
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
-      publicPath: 'app-extension-qribbon',
+      publicPath: 'quasar-ui-qribbon',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
@@ -82,7 +85,16 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+      },
+
+      chainWebpack (chain) {
+        chain.resolve.alias.merge({
+          'ui': path.resolve(__dirname, '../ui/src/index.js'),
+          'ribbon': path.resolve(__dirname, '../ui/src'),
+          'sass': path.resolve(__dirname, '../ui/src/index.sass')
+        })
       }
+
     },
 
     devServer: {
@@ -92,7 +104,8 @@ module.exports = function (ctx) {
       watchOptions: {
         ignored: [
           'node_modules',
-          '!node_modules/@quasar/quasar-app-extension-qribbon'
+          '!node_modules/@quasar/quasar-app-extension-qribbon',
+          '!node_modules/@quasar/quasar-ui-qribbon'
         ]
       }
     },

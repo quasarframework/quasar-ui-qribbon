@@ -27,7 +27,7 @@ This page created with [QMarkdown](https://quasarframework.github.io/app-extensi
 
 <script>
 import template from '../markdown/qribbon.md'
-import json from '@quasar/quasar-app-extension-qribbon/src/component/QRibbon.json'
+import { Api } from 'ui'
 
 export default {
   name: 'PageIndex',
@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       template: template,
-      json: json
+      json: Api
     }
   }
 }
