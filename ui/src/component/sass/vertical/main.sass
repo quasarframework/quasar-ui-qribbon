@@ -3,7 +3,7 @@
 .qribbon__vertical--top-left.leaf-left,
 .qribbon__vertical--top-right.leaf-left
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
     left: $qribbon-negative-width
@@ -12,7 +12,7 @@
 .qribbon__vertical--top-left.leaf-right,
 .qribbon__vertical--top-right.leaf-right
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: $qribbon-width solid transparent
     border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
     right: $qribbon-negative-width
@@ -21,7 +21,7 @@
 .qribbon__vertical--bottom-left.leaf-left,
 .qribbon__vertical--bottom-right.leaf-left
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: none
     border-bottom: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -31,7 +31,7 @@
 .qribbon__vertical--bottom-left.leaf-right,
 .qribbon__vertical--bottom-right.leaf-right
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: none
     border-bottom: $qribbon-width solid transparent
     border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -41,7 +41,7 @@
 .qribbon__vertical--right-full.leaf-left
 .qribbon__vertical--left-full.leaf-left
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: none
     border-bottom: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -49,7 +49,7 @@
     bottom: 0
 
   &::after
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-bottom: none
     border-top: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -59,7 +59,7 @@
 .qribbon__vertical--right-full.leaf-right
 .qribbon__vertical--left-full.leaf-right
   &::before
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-top: none
     border-bottom: $qribbon-width solid transparent
     border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -67,7 +67,7 @@
     bottom: 0
 
   &::after
-    @extend .qribbon__pseudo--before-after
+    @include __qribbon__pseudo--before-after
     border-bottom: none
     border-top: $qribbon-width solid transparent
     border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
@@ -162,11 +162,11 @@
 
 [class*=vertical--top].decorate-rounded-in
   padding-bottom: 24px
-  background: radial-gradient(circle at bottom, transparent 15px, var(--qribbon-background-color, black) 16px);
+  background: radial-gradient(circle at bottom, transparent 15px, var(--qribbon-background-color, black) 16px)
 
 [class*=vertical--bottom].decorate-rounded-in
   padding-top: 24px
-  background: radial-gradient(circle at top, transparent 15px, var(--qribbon-background-color, black) 16px);
+  background: radial-gradient(circle at top, transparent 15px, var(--qribbon-background-color, black) 16px)
 
 [class*=vertical--bottom].decorate-rounded-out
   border-top-left-radius: 15px

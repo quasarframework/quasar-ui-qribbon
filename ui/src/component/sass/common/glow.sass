@@ -1,45 +1,105 @@
-__qribbon-linear-gradiant(position)
-  linear-gradient(position, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 1) 100%)
+@function __qribbon-linear-gradient($position)
+  @return linear-gradient($position, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 1) 100%)
 
 @keyframes flow-ltr
-  0% { left: -5%; opacity: 0; }
-  50% { left: 50%; opacity: 0.3; }
-  100%{ left: 100%; opacity: 0; }
+  0%
+    left: -5%
+    opacity: 0
+  50%
+    left: 50%
+    opacity: 0.3
+  100%
+    left: 100%
+    opacity: 0
 
 @keyframes flow-rtl
-  0% { right: -5%; opacity: 0; }
-  50% { right: 50%; opacity: 0.3; }
-  100%{ right: 100%; opacity: 0; }
+  0%
+    right: -5%
+    opacity: 0
+  50%
+    right: 50%
+    opacity: 0.3
+  100%
+    right: 100%
+    opacity: 0
 
 @keyframes flow-ttb
-  0% { top: -5%; opacity: 0; }
-  50% { top: 50%; opacity: 0.3; }
-  100%{ top: 100%; opacity: 0; }
+  0%
+    top: -5%
+    opacity: 0
+  50%
+    top: 50%
+    opacity: 0.3
+  100%
+    top: 100%
+    opacity: 0
 
 @keyframes flow-btt
-  0% { bottom: -5%; opacity: 0; }
-  50% { bottom: 50%; opacity: 0.3; }
-  100%{ bottom: 100%; opacity: 0; }
+  0%
+    bottom: -5%
+    opacity: 0
+  50%
+    bottom: 50%
+    opacity: 0.3
+  100%
+    bottom: 100%
+    opacity: 0
 
 @keyframes flow-corner-tl
-  0% { left: 0%; bottom: 0%; opacity: 0; }
-  50% { left: 50%; bottom: 50%; opacity: 0.3; }
-  100%{ left: 100%; bottom: 100%; opacity: 0; }
+  0%
+    left: 0%
+    bottom: 0%
+    opacity: 0
+  50%
+    left: 50%
+    bottom: 50%
+    opacity: 0.3
+  100%
+    left: 100%
+    bottom: 100%
+    opacity: 0
 
 @keyframes flow-corner-tr
-  0% { right: 0%; bottom: 0%; opacity: 0; }
-  50% { right: 50%; bottom: 50%; opacity: 0.3; }
-  100%{ right: 100%; bottom: 100%; opacity: 0; }
+  0%
+    right: 0%
+    bottom: 0%
+    opacity: 0
+  50%
+    right: 50%
+    bottom: 50%
+    opacity: 0.3
+  100%
+    right: 100%
+    bottom: 100%
+    opacity: 0
 
 @keyframes flow-corner-bl
-  0% { left: 0%; bottom: 0%; opacity: 0; }
-  50% { left: 50%; bottom: 50%; opacity: 0.3; }
-  100%{ left: 100%; bottom: 100%; opacity: 0; }
+  0%
+    left: 0%
+    bottom: 0%
+    opacity: 0
+  50%
+    left: 50%
+    bottom: 50%
+    opacity: 0.3
+  100%
+    left: 100%
+    bottom: 100%
+    opacity: 0
 
 @keyframes flow-corner-br
-  0% { right: 0%; bottom: 0%; opacity: 0; }
-  50% { right: 50%; bottom: 50%; opacity: 0.3; }
-  100%{ right: 100%; bottom: 100%; opacity: 0; }
+  0%
+    right: 0%
+    bottom: 0%
+    opacity: 0
+  50%
+    right: 50%
+    bottom: 50%
+    opacity: 0.3
+  100%
+    right: 100%
+    bottom: 100%
+    opacity: 0
 
 [class^=qribbon__],
 [class^=qribbon__]
@@ -57,12 +117,12 @@ __qribbon-linear-gradiant(position)
     animation-iteration-count: var(--qribbon-glow-iteration-count, 1.5s)
     animation-fill-mode: forwards
     animation-play-state: running
-    background: __qribbon-linear-gradiant(to right)
+    background: __qribbon-linear-gradient(to right)
 
 [class^=qribbon__horizontal--right]
   .glow
     animation-name: flow-rtl
-    background: __qribbon-linear-gradiant(to left)
+    background: __qribbon-linear-gradient(to left)
 
 [class^=qribbon__vertical--top]
   .glow
@@ -71,7 +131,7 @@ __qribbon-linear-gradiant(position)
     right: 0
     animation-name: flow-ttb
     transform: skew(0)
-    background: __qribbon-linear-gradiant(to bottom)
+    background: __qribbon-linear-gradient(to bottom)
 
 [class^=qribbon__vertical--bottom]
   .glow
@@ -82,7 +142,7 @@ __qribbon-linear-gradiant(position)
     top: unset
     animation-name: flow-btt
     transform: skew(0)
-    background: __qribbon-linear-gradiant(to top)
+    background: __qribbon-linear-gradient(to top)
 
 [class^=qribbon__corner--top-left]
   div
@@ -91,7 +151,7 @@ __qribbon-linear-gradiant(position)
       width: 40px
       animation-name: flow-corner-tl
       transform: skew(45deg)
-      background: __qribbon-linear-gradiant(90deg)
+      background: __qribbon-linear-gradient(90deg)
 
 [class^=qribbon__corner--top-right]
   div
@@ -101,7 +161,7 @@ __qribbon-linear-gradiant(position)
       left: auto
       animation-name: flow-corner-tr
       transform: skew(-45deg)
-      background: __qribbon-linear-gradiant(-90deg)
+      background: __qribbon-linear-gradient(-90deg)
 
 [class^=qribbon__corner--bottom-left]
   div
@@ -110,7 +170,7 @@ __qribbon-linear-gradiant(position)
       width: 40px
       animation-name: flow-corner-bl
       transform: skew(-45deg)
-      background: __qribbon-linear-gradiant(90deg)
+      background: __qribbon-linear-gradient(90deg)
 
 [class^=qribbon__corner--bottom-right]
   div
@@ -120,4 +180,4 @@ __qribbon-linear-gradiant(position)
       animation-name: flow-corner-br
       left: auto
       transform: skew(45deg)
-      background: __qribbon-linear-gradiant(-90deg)
+      background: __qribbon-linear-gradient(-90deg)
