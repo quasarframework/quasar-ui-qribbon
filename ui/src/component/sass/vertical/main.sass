@@ -1,0 +1,177 @@
+@import '../common/main.sass'
+
+.qribbon__vertical--top-left.leaf-left,
+.qribbon__vertical--top-right.leaf-left
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: $qribbon-width solid transparent
+    border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
+    left: $qribbon-negative-width
+    top: 0
+
+.qribbon__vertical--top-left.leaf-right,
+.qribbon__vertical--top-right.leaf-right
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: $qribbon-width solid transparent
+    border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
+    right: $qribbon-negative-width
+    top: 0
+
+.qribbon__vertical--bottom-left.leaf-left,
+.qribbon__vertical--bottom-right.leaf-left
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: none
+    border-bottom: $qribbon-width solid transparent
+    border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
+    left: $qribbon-negative-width
+    bottom: 0
+
+.qribbon__vertical--bottom-left.leaf-right,
+.qribbon__vertical--bottom-right.leaf-right
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: none
+    border-bottom: $qribbon-width solid transparent
+    border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
+    right: $qribbon-negative-width
+    bottom: 0
+
+.qribbon__vertical--right-full.leaf-left
+.qribbon__vertical--left-full.leaf-left
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: none
+    border-bottom: $qribbon-width solid transparent
+    border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
+    left: $qribbon-negative-width
+    bottom: 0
+
+  &::after
+    @extend .qribbon__pseudo--before-after
+    border-bottom: none
+    border-top: $qribbon-width solid transparent
+    border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
+    left: $qribbon-negative-width
+    top: 0
+
+.qribbon__vertical--right-full.leaf-right
+.qribbon__vertical--left-full.leaf-right
+  &::before
+    @extend .qribbon__pseudo--before-after
+    border-top: none
+    border-bottom: $qribbon-width solid transparent
+    border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
+    right: $qribbon-negative-width
+    bottom: 0
+
+  &::after
+    @extend .qribbon__pseudo--before-after
+    border-bottom: none
+    border-top: $qribbon-width solid transparent
+    border-left: $qribbon-width solid var(--qribbon-leaf-color, black)
+    right: $qribbon-negative-width
+    top: 0
+
+.qribbon__vertical--top-left,
+.qribbon__vertical--bottom-left
+  left: 0
+  right: inherit
+
+.qribbon__vertical--bottom-right,
+.qribbon__vertical--top-right
+  right: $qribbon-width*2
+  left: inherit
+
+.qribbon__vertical--bottom-left,
+.qribbon__vertical--bottom-right
+  position: absolute
+  padding: 12px 5px
+  bottom: $qribbon-negative-width
+  writing-mode: tb
+  background: var(--qribbon-background-color, black)
+  color: var(--qribbon-text-color, white)
+  z-index: 100
+
+.qribbon__vertical--top-left,
+.qribbon__vertical--top-right
+  position: absolute
+  padding: 12px 5px
+  top: $qribbon-negative-width
+  writing-mode: tb
+  background: var(--qribbon-background-color, black)
+  color: var(--qribbon-text-color, white)
+  z-index: 100
+
+.qribbon__vertical--left-full
+  @extend .qribbon__vertical--bottom-left, .qribbon__vertical--top-left
+  left: 0
+  right: inherit
+
+.qribbon__vertical--right-full
+  @extend .qribbon__vertical--bottom-right, .qribbon__vertical--top-right
+  right: $qribbon-width*2
+  left: inherit
+
+[class*=vertical--top].decorate-point-in,
+[class*=vertical--bottom].decorate-point-in
+  &::after
+    content: ""
+    display: block
+    position: absolute
+    bottom: -12px
+    left: 0
+    right: 0
+    border-top: 12px solid transparent
+    border-bottom: 12px solid transparent
+    border-right: 15px solid var(--qribbon-background-color, black)
+    border-left: 15px solid var(--qribbon-background-color, black)
+
+[class*=vertical--bottom].decorate-point-in
+  &::after
+    bottom: inherit
+    top: -12px
+    border-top: 12px solid transparent
+    border-bottom: 12px solid transparent
+    border-right: 15px solid var(--qribbon-background-color, black)
+    border-left: 15px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-point-out,
+[class*=vertical--bottom].decorate-point-out
+  &::after
+    content: ""
+    display: block
+    position: absolute
+    top: -24px
+    left: 0
+    right: 0
+    border-top: 12px solid transparent
+    border-right: 15px solid transparent
+    border-left: 15px solid transparent
+    border-bottom: 12px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-point-out
+  &::after
+    bottom: -24px
+    top: inherit
+    border-bottom: 12px solid transparent
+    border-right: 15px solid transparent
+    border-left: 15px solid transparent
+    border-top: 12px solid var(--qribbon-background-color, black)
+
+[class*=vertical--top].decorate-rounded-in
+  padding-bottom: 24px
+  background: radial-gradient(circle at bottom, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=vertical--bottom].decorate-rounded-in
+  padding-top: 24px
+  background: radial-gradient(circle at top, transparent 15px, var(--qribbon-background-color, black) 16px);
+
+[class*=vertical--bottom].decorate-rounded-out
+  border-top-left-radius: 15px
+  border-top-right-radius: 15px
+
+[class*=vertical--top].decorate-rounded-out
+  border-bottom-left-radius: 15px
+  border-bottom-right-radius: 15px

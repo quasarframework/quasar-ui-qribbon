@@ -13,7 +13,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          QRibbon Demo
+          QRibbon <span class="text-subtitle2">v{{ version }}</span>
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -107,17 +107,15 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
+import { version } from 'ui'
 
 export default {
   name: 'MyLayout',
   data () {
     return {
+      version: version,
       leftDrawerOpen: this.$q.platform.is.desktop
     }
-  },
-  methods: {
-    openURL
   }
 }
 </script>
