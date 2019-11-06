@@ -7,7 +7,8 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
-      'qribbon'
+      'qribbon',
+      'components'
     ],
 
     css: [
@@ -16,10 +17,10 @@ module.exports = function (ctx) {
 
     extras: [
       'roboto-font',
-      'material-icons' // optional, you are not bound to it
+      'material-icons', // optional, you are not bound to it
       // 'ionicons-v4',
       // 'mdi-v3',
-      // 'fontawesome-v5',
+      'fontawesome-v5'
       // 'eva-icons'
     ],
 
@@ -34,6 +35,7 @@ module.exports = function (ctx) {
         'QCheckbox',
         'QColor',
         'QDrawer',
+        'QExpansionItem',
         'QHeader',
         'QIcon',
         'QInput',
@@ -49,6 +51,10 @@ module.exports = function (ctx) {
         'QPopupProxy',
         'QSelect',
         'QSeparator',
+        'QTabs',
+        'QTab',
+        'QTabPanels',
+        'QTabPanel',
         'QToolbar',
         'QToolbarTitle'
       ],

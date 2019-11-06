@@ -9,6 +9,13 @@ const routes = [
       { path: '/examples', component: () => import('pages/Examples.vue') },
       { path: '/builder', component: () => import('pages/RibbonBuilder.vue') }
     ]
+  },
+  {
+    path: '/examples',
+    component: () => import('layouts/ExamplesLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Examples.vue') }
+    ]
   }
 ]
 
