@@ -3,10 +3,18 @@
     <div class="q-markdown">
       <example-title title="Examples" />
       <example-card title="Sides" name="Sides" :tag-parts="getTagParts(require('!!raw-loader!../examples/Sides.vue').default)" />
+      <example-card title="Vertical" name="Vertical" :tag-parts="getTagParts(require('!!raw-loader!../examples/Vertical.vue').default)" />
       <example-card title="Colors" name="Colors" :tag-parts="getTagParts(require('!!raw-loader!../examples/Colors.vue').default)" />
       <example-card title="Full Width" name="Full" :tag-parts="getTagParts(require('!!raw-loader!../examples/Full.vue').default)" />
       <example-card title="Corners" name="Corners" :tag-parts="getTagParts(require('!!raw-loader!../examples/Corners.vue').default)" />
+      <example-card title="Inline" name="Inline" :tag-parts="getTagParts(require('!!raw-loader!../examples/Inline.vue').default)" />
       <example-card title="QToolBarTitle" name="ToolBarTitle" :tag-parts="getTagParts(require('!!raw-loader!../examples/ToolBarTitle.vue').default)" />
+      <example-card title="QMenu" name="Menu" :tag-parts="getTagParts(require('!!raw-loader!../examples/Menu.vue').default)" />
+      <!-- <example-card title="Marquee" name="Marquee" :tag-parts="getTagParts(require('!!raw-loader!../examples/Marquee.vue').default)" /> -->
+      <example-card title="Glow" name="Glow" :tag-parts="getTagParts(require('!!raw-loader!../examples/Glow.vue').default)" />
+      <example-card title="Avatar" name="Avatar" :tag-parts="getTagParts(require('!!raw-loader!../examples/Avatar.vue').default)" />
+      <example-card title="Leaf Color" name="Leaf" :tag-parts="getTagParts(require('!!raw-loader!../examples/Leaf.vue').default)" />
+      <example-card title="Icons" name="Icon" :tag-parts="getTagParts(require('!!raw-loader!../examples/Icon.vue').default)" />
 
       <q-card class="q-my-lg q-pa-md flat bordered" style="height: 90px; width: 75%">
         <q-select
