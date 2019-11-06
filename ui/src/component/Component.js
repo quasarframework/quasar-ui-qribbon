@@ -57,7 +57,10 @@ export default {
         'rounded-in',
         'rounded-out',
         'point-in',
-        'point-out'
+        'point-out',
+        // Allow resetting of the prop for transparent wrappers
+        // https://github.com/quasarframework/app-extension-qribbon/issues/15
+        void 0
       ].includes(val)
     },
 
