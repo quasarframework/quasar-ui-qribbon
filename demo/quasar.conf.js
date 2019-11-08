@@ -52,6 +52,7 @@ module.exports = function (ctx) {
         'QScrollArea',
         'QSelect',
         'QSeparator',
+        'QSpace',
         'QTabs',
         'QTab',
         'QTabPanels',
