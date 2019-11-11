@@ -2,7 +2,7 @@
   <q-card class="q-my-lg q-pa-md">
     <q-card-section>
       <div class="box-ribbon-wrapper q-pt-xl">
-          <q-toolbar class="q-pb-md qribbon">
+          <q-toolbar class="q-pb-md">
             <q-ribbon
               position="left"
               color="rgba(0,0,0,.58)"
@@ -26,10 +26,5 @@
 <style lang="sass" scoped>
 .box-ribbon-wrapper
   background-color: $grey-3
-  margin: 0 auto
-  position: relative
-
-.q-toolbar.qribbon
-  padding-left: 0
 
 </style>

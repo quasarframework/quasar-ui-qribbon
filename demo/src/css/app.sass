@@ -30,7 +30,8 @@ $bgColor: blue
   opacity: 0.5
 
 .qribbon__horizontal--left
-  padding: unset !important
+  .q-toolbar__title
+    padding: 0 20px !important
 
 .example-title
   cursor: pointer
@@ -298,3 +299,58 @@ a
 @media screen and (max-width: 42em)
   .site-footer
     font-size: 0.9rem
+
+.ribbon-wrapper.move-1
+  .qribbon__vertical--top-left,
+  .qribbon__vertical--bottom-left
+    left: 20px
+
+.ribbon-wrapper.move-2
+  .qribbon__vertical--top-left,
+  .qribbon__vertical--bottom-left
+    left: 70px
+
+.ribbon-wrapper.move-3
+  .qribbon__vertical--top-left,
+  .qribbon__vertical--bottom-left
+    left: 120px
+
+.ribbon-wrapper
+  height: 50px
+
+.border-radius
+  [class^=qribbon__]
+    border-radius: 3px 5px 5px 0
+
+.box-ribbon-wrapper
+  width: 90%
+  min-height: 400px
+  background-color: $grey-3
+  margin: 0 auto
+  position: relative
+
+  .github-text
+    font-size: 14px
+
+    a
+      border-top: 1px dashed white
+      border-bottom: 1px dashed white
+      transform: rotate(45deg)
+      text-decoration: none
+      padding: 2px 0
+
+.qribbon-avatar
+  [class*=horizontal--right].decorate-rounded-out
+    border-top-left-radius: 45px
+    border-bottom-left-radius: 45px
+    padding-left: 5px
+
+.border-radius-top
+  [class^=qribbon__]
+    border-radius: 5px 5px 0 0
+
+.example-title
+  white-space: unset
+
+.qribbon__container
+  font-family: "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif

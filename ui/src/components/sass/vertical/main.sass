@@ -38,7 +38,7 @@
     right: $qribbon-negative-width
     bottom: 0
 
-.qribbon__vertical--right-full.leaf-left
+.qribbon__vertical--right-full.leaf-left,
 .qribbon__vertical--left-full.leaf-left
   &::before
     @include __qribbon__pseudo--before-after
@@ -46,6 +46,7 @@
     border-bottom: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
     left: $qribbon-negative-width
+    top: unset
     bottom: 0
 
   &::after
@@ -54,9 +55,10 @@
     border-top: $qribbon-width solid transparent
     border-right: $qribbon-width solid var(--qribbon-leaf-color, black)
     left: $qribbon-negative-width
+    bottom: unset
     top: 0
 
-.qribbon__vertical--right-full.leaf-right
+.qribbon__vertical--right-full.leaf-right,
 .qribbon__vertical--left-full.leaf-right
   &::before
     @include __qribbon__pseudo--before-after
@@ -89,7 +91,7 @@
   position: absolute
   padding: 12px 5px
   bottom: $qribbon-negative-width
-  writing-mode: tb
+  writing-mode: vertical-rl
   background: var(--qribbon-background-color, black)
   color: var(--qribbon-text-color, white)
   z-index: 100
@@ -99,7 +101,7 @@
   position: absolute
   padding: 12px 5px
   top: $qribbon-negative-width
-  writing-mode: tb
+  writing-mode: vertical-rl
   background: var(--qribbon-background-color, black)
   color: var(--qribbon-text-color, white)
   z-index: 100

@@ -89,7 +89,7 @@
           <q-ribbon class="q-pb-md" position="right" background-color="red-5" leaf-color="purple-3" inline>Quasar Color (red-5)</q-ribbon>
         </div>
 
-        <q-toolbar class="q-pb-md qribbon">
+        <q-toolbar class="q-pb-md">
           <q-ribbon
             position="left"
             color="rgba(0,0,0,.58)"
@@ -151,27 +151,27 @@
       <q-separator class="q-mb-lg" />
 
       <div class="box-ribbon-wrapper q-py-md">
-        <div class="ribbon-wrapper">
+        <div class="ribbon-wrapper move-1">
           <q-ribbon type="vertical" position="top-left" leaf-position="right" glow>Top Down Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper">
+        <div class="ribbon-wrapper move-1">
           <q-ribbon type="vertical" position="bottom-left" leaf-position="left" glow>Bottom Up Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper move-50">
+        <div class="ribbon-wrapper move-2">
           <q-ribbon type="vertical" position="top-left" leaf-position="right" decoration="point-in">Top Down Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper move-50">
+        <div class="ribbon-wrapper move-2">
           <q-ribbon type="vertical" position="bottom-left" leaf-position="left" decoration="point-out">Bottom Up Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper move-100">
+        <div class="ribbon-wrapper move-3">
           <q-ribbon type="vertical" position="top-left" leaf-position="right" decoration="rounded-in">Top Down Ribbon</q-ribbon>
         </div>
 
-        <div class="ribbon-wrapper move-100">
+        <div class="ribbon-wrapper move-3">
           <q-ribbon type="vertical" position="bottom-left" leaf-position="left" decoration="rounded-out">Bottom Up Ribbon</q-ribbon>
         </div>
 
@@ -189,7 +189,7 @@
       <q-separator />
 
       <q-card-section>
-        <div class="box-ribbon-wrapper">
+        <div class="box-ribbon-wrapper" style="min-height: 300px">
           <q-ribbon position="top-left" type="corner" glow>Glow Top Left</q-ribbon>
           <q-ribbon class="github-text" position="top-right" type="corner" color="white" background-color="#5b5e63">
             <a href="https://github.com/quasarframework/app-extension-qribbon" target="_blank">FORK ME ON GITHUB!</a>

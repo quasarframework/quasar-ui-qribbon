@@ -2,10 +2,10 @@
   <q-card class="q-my-lg q-pa-md">
     <q-card-section>
       <div class="box-ribbon-wrapper">
-        <div class="ribbon-wrapper">
+        <div class="ribbon-wrapper move-1">
           <q-ribbon type="vertical" position="bottom-left" leaf-position="left" glow>Bottom Up Ribbon</q-ribbon>
         </div>
-        <div class="ribbon-wrapper move-100">
+        <div class="ribbon-wrapper move-1">
           <q-ribbon type="vertical" position="top-left" leaf-position="right" glow>Top Down Ribbon</q-ribbon>
         </div>
         <q-ribbon class="q-pb-md border-radius" glow>With border radius - GLOWING!</q-ribbon>
@@ -14,7 +14,7 @@
           <q-ribbon class="q-pb-md" position="right" leaf-position="top" decoration="rounded-in" inline glow>Inline Right Ribbon</q-ribbon>
         </div>
         <q-ribbon class="q-pb-md text-right q-mt-md" leaf-position="top" size="full" leaf-color="green" color="green" background-color="yellow" glow>Full Inverted Hippy Ribbon (.text-right)</q-ribbon>
-        <q-ribbon position="top-left" type="corner" glow>Glow Top Left</q-ribbon>
+        <q-ribbon position="top-right" type="corner" glow>Glow Top Right</q-ribbon>
       </div>
     </q-card-section>
   </q-card>
@@ -26,16 +26,6 @@
   margin: 0 auto
   position: relative
 
-.ribbon-wrapper.move-50
-  .qribbon__vertical--top-left,
-  .qribbon__vertical--bottom-left
-    left: 50px
-
-.ribbon-wrapper.move-100
-  .qribbon__vertical--top-left,
-  .qribbon__vertical--bottom-left
-    left: 100px
-
 .ribbon-wrapper
-  height: 50px
+  height: 70px
 </style>
