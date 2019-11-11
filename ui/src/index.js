@@ -1,17 +1,14 @@
 import { version } from '../package.json'
-import Component from './component/Component'
-import Api from './component/QRibbon.json'
+import Component from './components/QRibbon'
 
 export {
   version,
-  Component,
-  Api
+  Component
 }
 
 export default {
   version,
   Component,
-  Api,
 
   install (Vue) {
     Vue.component(Component.name, Component)

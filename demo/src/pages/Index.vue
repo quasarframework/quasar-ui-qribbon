@@ -1,41 +1,63 @@
 <template>
-  <q-page class="row justify-center">
-    <q-card class="q-my-lg q-pt-md flat bordered" style="width: 75%">
-      <q-card-section>
-        <q-markdown :src="template" />
-        <component-api
-          title="QRibbon API"
-          :json="json"
-        />
-        <q-markdown>
+  <hero>
+    <q-markdown :src="markdown" toc @data="onToc" />
+    <component-api
+      title="QRibbon API"
+      :json="json"
+    />
+    <q-markdown>
 # Donate
-If you appreciate the work that went into this App Extension, please consider [donating to Quasar](https://donate.quasar.dev).
+If you appreciate the work that went into this, please consider donating to [Quasar](https://donate.quasar.dev) or [Jeff](https://github.com/sponsors/hawkeye64).
 
 ---
+
 This page created with [QMarkdown](https://quasarframework.github.io/app-extension-qmarkdown), another great Quasar App Extension.
     </q-markdown>
     <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
       <q-btn fab icon="keyboard_arrow_up" color="primary" />
     </q-page-scroller>
-      </q-card-section>
-    </q-card>
-  </q-page>
+  </hero>
 </template>
 
-<style>
-</style>
-
 <script>
-import template from '../markdown/qribbon.md'
-import { Api } from 'ui'
+import Hero from '../components/Hero'
+import markdown from '../markdown/qribbon.md'
+import Api from 'api'
 
 export default {
   name: 'PageIndex',
 
+  components: {
+    Hero
+  },
+
   data () {
     return {
-      template: template,
+      markdown: markdown,
       json: Api
+    }
+  },
+
+  computed: {
+    toc:
+    {
+      get () {
+        return this.$store.state.common.toc
+      },
+      set (toc) {
+        // console.log('toc:', toc)
+        this.$store.commit('common/toc', toc)
+      }
+    }
+  },
+
+  methods: {
+    onToc (toc) {
+      // add the manual ones
+      toc.push({ id: 'QRibbon-API', label: 'QRibbon API', level: 1, children: Array(0) })
+      toc.push({ id: 'Donate', label: 'Donate', level: 1, children: Array(0) })
+
+      this.toc = toc
     }
   }
 }

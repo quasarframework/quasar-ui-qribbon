@@ -2,7 +2,7 @@
 import slot from 'quasar/src/utils/slot.js'
 
 // Mixins
-import QRibbonColorize from './mixins/colorize'
+import QRibbonColorize from '../mixins/colorize'
 
 export default {
   name: 'QRibbon',

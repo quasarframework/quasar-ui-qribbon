@@ -16,6 +16,11 @@
       <example-card title="Leaf Color" name="Leaf" :tag-parts="getTagParts(require('!!raw-loader!../examples/Leaf.vue').default)" />
       <example-card title="Icons" name="Icon" :tag-parts="getTagParts(require('!!raw-loader!../examples/Icon.vue').default)" />
 
+      <q-markdown>
+::: warning
+TODO: Allan - remove examples below when examples above are completed
+:::
+      </q-markdown>
       <q-card class="q-my-lg q-pa-md flat bordered" style="height: 90px; width: 75%">
         <q-select
           v-model="exampleTypes"
@@ -248,7 +253,18 @@ export default {
     this.toc = []
     this.tempToc = []
     this.addToToc('Examples')
+    this.addToToc('Sides', 2)
+    this.addToToc('Vertical', 2)
+    this.addToToc('Colors', 2)
+    this.addToToc('Full Width', 2)
     this.addToToc('Corners', 2)
+    this.addToToc('Inline', 2)
+    this.addToToc('QToolBarTitle', 2)
+    this.addToToc('QMenu', 2)
+    this.addToToc('Glow', 2)
+    this.addToToc('Avatar', 2)
+    this.addToToc('Leaf Color', 2)
+    this.addToToc('Icons', 2)
 
     this.toc = this.tempToc
   },
