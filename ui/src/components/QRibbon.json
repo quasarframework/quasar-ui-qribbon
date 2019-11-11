@@ -1,8 +1,8 @@
 {
-  "type": "component",
   "props": {
     "type": {
       "type": "String",
+      "category": "behavior",
       "desc": "Tells the component which type of ribbon is to be used",
       "default": "horizontal",
       "values": [ "horizontal", "corner", "vertical" ],
@@ -13,6 +13,7 @@
     },
     "position": {
       "type": "String",
+      "category": "behavior",
       "desc": "Tells the component which position is to be used. If `horizontal`, then only `left` or `right` are applicable. Otherwise, the remaining positions can be used with `vertical` or `corner`",
       "default": "`left` or `top-left`",
       "values": [ "left", "right", "full", "top left", "top right", "bottom left", "bottom right" ],
@@ -23,6 +24,7 @@
     },
     "color": {
       "type": "String",
+      "category": "style",
       "desc": "Set the text color using any CSS color, Quasar Color or CSS var pointing to a color",
       "default": "white",
       "examples": [
@@ -32,6 +34,7 @@
     },
     "background-color": {
       "type": "String",
+      "category": "style",
       "desc": "Set the background color using any CSS color, Quasar Color or CSS var pointing to a color",
       "default": "#027BE3",
       "examples": [
@@ -41,6 +44,7 @@
     },
     "leaf-color": {
       "type": "String",
+      "category": "style",
       "desc": "CSS Color for the leaf",
       "default": "Auto-shaded based on `background-color`",
       "examples": [
@@ -50,6 +54,7 @@
     },
     "leaf-position": {
       "type": "String",
+      "category": "behavior",
       "desc": "For `horizontal` use `top` or `bottom`, for `vertical` use `left` or `right`",
       "default": "`bottom` or `left`",
       "values": [ "top", "bottom", "left", "right" ],
@@ -60,6 +65,7 @@
     },
     "size": {
       "type": "String",
+      "category": "style",
       "desc": "Use `full` to full the container",
       "default": "null",
       "values": [ "null", "full" ],
@@ -69,6 +75,7 @@
     },
     "decoration": {
       "type": "String",
+      "category": "style",
       "desc": "The type of decoration to use with the ribbon. Cannot be used with `corner` type ribbon",
       "default": "null",
       "values": [ "null", "rounded-in", "rounded-out", "point-in", "point-out" ],
@@ -79,14 +86,17 @@
     },
     "inline": {
       "type": "Boolean",
+      "category": "behavior",
       "desc": "Used when 2 QRibbons are required to be inline (on left and right along the same X axis). Both QRibbon's must be wrapped with the following: `<div class=\"flex justify-between\"></div>`"
     },
     "glow": {
       "type": "Boolean",
+      "category": "behavior",
       "desc": "Add a moving glow to the ribbon"
     },
     "glow-speed": {
       "type": "Number",
+      "category": "behavior",
       "desc": "The duration (in seconds) it takes for the animation to complete",
       "default": "1.5",
       "examples": [
@@ -96,6 +106,7 @@
     },
     "glow-iteration-count": {
       "type": "String",
+      "category": "behavior",
       "desc": "A number or string representing how many times the animation will run",
       "default": "infinite",
       "examples": [
