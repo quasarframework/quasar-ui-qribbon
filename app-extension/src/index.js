@@ -25,7 +25,7 @@ module.exports = function (api) {
   api.compatibleWith('@quasar/app', '^1.1.0')
 
   // Uncomment the line below if you provide a JSON API for your component
-  api.registerDescribeApi('QRibbon', '~@quasar/quasar-ui-qribbon/src/component/QRibbon.json')
+  api.registerDescribeApi('QRibbon', '~@quasar/quasar-ui-qribbon/dist/api/QRibbon.json')
 
   // We extend /quasar.conf.js
   api.extendQuasarConf(extendConf)
