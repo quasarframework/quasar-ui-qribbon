@@ -7,7 +7,7 @@
     />
     <q-markdown>
 # Donate
-If you appreciate the work that went into this, please consider donating to [Quasar](https://donate.quasar.dev) or [Jeff](https://github.com/sponsors/hawkeye64).
+If you appreciate the work that went into this, please consider donating to [Quasar](https://donate.quasar.dev) or [Allan](https://github.com/sponsors/webnoob).
 
 ---
 
