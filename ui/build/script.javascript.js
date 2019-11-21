@@ -1,12 +1,16 @@
 const path = require('path')
 const rollup = require('rollup')
 const uglify = require('uglify-es')
-const buble = require('rollup-plugin-buble')
-const json = require('rollup-plugin-json')
+const buble = require('@rollup/plugin-buble')
+const json = require('@rollup/plugin-json')
 const nodeResolve = require('rollup-plugin-node-resolve')
 
 const buildConf = require('./config')
 const buildUtils = require('./utils')
+
+const bubleConfig = {
+  objectAssign: 'Object.assign'
+}
 
 const rollupPlugins = [
   nodeResolve({
@@ -14,9 +18,7 @@ const rollupPlugins = [
     preferBuiltins: false
   }),
   json(),
-  buble({
-    objectAssign: 'Object.assign'
-  })
+  buble(bubleConfig)
 ]
 
 const builds = [
