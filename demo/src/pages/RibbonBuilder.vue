@@ -1,207 +1,211 @@
 <template>
-  <q-page class="row justify-center items-baseline qribbon-builder">
-    <q-card class="q-my-lg q-py-md flat bordered relative-position" style="max-width: 800px; width: 90%">
-      <div class="ribbon-wrapper">
-        <q-ribbon class="border-radius" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
-      </div>
+  <hero>
+    <div class="row justify-center items-baseline qribbon-builder">
+      <q-card class="q-my-lg q-py-md flat bordered relative-position" style="max-width: 800px; width: 90%">
+        <div class="ribbon-wrapper">
+          <q-ribbon class="border-radius" position="left" color="#616161" background-color="#e0e0e0">QRibbon Builder</q-ribbon>
+        </div>
 
-      <q-separator />
+        <q-separator />
 
-      <q-card-section class="q-pa-none q-py-md">
-        <q-ribbon
-          class="q-pb-md"
-          :position="getPosition"
-          :type="type"
-          :color="color"
-          :background-color="backgroundColor"
-          :leaf-color="leafColor"
-          :leaf-position="leafPosition"
-          :size="full ? 'full' : void 0"
-          :decoration="decoration"
-          :glow="glow"
-          :glow-speed="glowSpeed"
-          :glow-iteration-count="glowIterationCount"
-        >
-          {{content}}
-        </q-ribbon>
+        <q-card-section class="q-pa-none q-py-md">
+          <q-ribbon
+            class="q-pb-md"
+            :position="getPosition"
+            :type="type"
+            :color="color"
+            :background-color="backgroundColor"
+            :leaf-color="leafColor"
+            :leaf-position="leafPosition"
+            :size="full ? 'full' : void 0"
+            :decoration="decoration"
+            :glow="glow"
+            :glow-speed="glowSpeed"
+            :glow-iteration-count="glowIterationCount"
+          >
+            {{content}}
+          </q-ribbon>
 
-        <div class="q-pa-sm">
-          <q-select
-            label="Color Mode"
-            class="col-xs-12"
-            v-model="colorMode"
-            map-options
-            emit-value
-            :options="[
-                { value: 'css', label: 'CSS' },
-                { value: 'quasar', label: 'Quasar / Text' }
-              ]"
-          />
-
-          <div class="row justify-around q-mt-lg gt-xs">
-            <div class="text-center">
-              Text Color
-              <q-color v-model="color" v-if="cssColorMode" no-header no-footer />
-              <q-input v-model="color" v-else />
-            </div>
-            <div class="text-center">
-              Background Color
-              <q-color v-model="backgroundColor" v-if="cssColorMode" no-header no-footer />
-              <q-input v-model="backgroundColor" v-else />
-            </div>
-            <div class="text-center">
-              Leaf Color
-              <q-color v-model="leafColor" v-if="cssColorMode" no-header no-footer />
-              <q-input v-model="leafColor" v-else />
-            </div>
-          </div>
-
-          <div class="row justify-around q-mt-lg xs">
-            <q-input
-              v-model="color"
-              class="col-12 q-mt-md"
-              label="Text Color"
-            >
-              <template v-slot:append>
-                <q-icon name="colorize" class="cursor-pointer">
-                  <q-popup-proxy transition-show="scale" transition-hide="scale">
-                    <q-color v-model="color" no-header no-footer />
-                  </q-popup-proxy>
-                </q-icon>
-              </template>
-            </q-input>
-
-            <q-input
-              v-model="backgroundColor"
-              class="col-12"
-              label="Background Color"
-            >
-              <template v-slot:append>
-                <q-icon name="colorize" class="cursor-pointer">
-                  <q-popup-proxy transition-show="scale" transition-hide="scale">
-                    <q-color v-model="backgroundColor" no-header no-footer />
-                  </q-popup-proxy>
-                </q-icon>
-              </template>
-            </q-input>
-
-            <q-input
-              v-model="leafColor"
-              class="col-12"
-              label="Leaf Color"
-            >
-              <template v-slot:append>
-                <q-icon name="colorize" class="cursor-pointer">
-                  <q-popup-proxy transition-show="scale" transition-hide="scale">
-                    <q-color v-model="leafColor" no-header no-footer />
-                  </q-popup-proxy>
-                </q-icon>
-              </template>
-            </q-input>
-          </div>
-          <div class="row justify-around">
+          <div class="q-pa-sm">
             <q-select
-              label="Type"
+              label="Color Mode"
               class="col-xs-12"
-              v-model="type"
+              v-model="colorMode"
               map-options
               emit-value
               :options="[
-                { value: 'horizontal', label: 'Horizontal (Default)' },
-                { value: 'vertical', label: 'Vertical' },
-                { value: 'corner', label: 'Corner' }
-              ]"
+                  { value: 'css', label: 'CSS' },
+                  { value: 'quasar', label: 'Quasar / Text' }
+                ]"
             />
 
-            <q-select
-              label="Position"
-              class="col-xs-12"
-              v-model="position"
-              map-options
-              emit-value
-              :options="positionOptions"
-            />
+            <div class="row justify-around q-mt-lg gt-xs">
+              <div class="text-center">
+                Text Color
+                <q-color v-model="color" v-if="cssColorMode" no-header no-footer />
+                <q-input v-model="color" v-else />
+              </div>
+              <div class="text-center">
+                Background Color
+                <q-color v-model="backgroundColor" v-if="cssColorMode" no-header no-footer />
+                <q-input v-model="backgroundColor" v-else />
+              </div>
+              <div class="text-center">
+                Leaf Color
+                <q-color v-model="leafColor" v-if="cssColorMode" no-header no-footer />
+                <q-input v-model="leafColor" v-else />
+              </div>
+            </div>
 
-            <q-select
-              label="Leaf Position"
-              class="col-xs-12"
-              v-model="leafPosition"
-              map-options
-              emit-value
-              :options="leafPositionOptions"
-              v-if="!isCorner"
-            />
+            <div class="row justify-around q-mt-lg xs">
+              <q-input
+                v-model="color"
+                class="col-12 q-mt-md"
+                label="Text Color"
+              >
+                <template v-slot:append>
+                  <q-icon name="colorize" class="cursor-pointer">
+                    <q-popup-proxy transition-show="scale" transition-hide="scale">
+                      <q-color v-model="color" no-header no-footer />
+                    </q-popup-proxy>
+                  </q-icon>
+                </template>
+              </q-input>
 
-            <q-select
-              label="Decoration"
-              class="col-xs-12"
-              v-model="decoration"
-              map-options
-              emit-value
-              :options="[
-                { value: null, label: 'Default' },
-                { value: 'rounded-in', label: 'Rounded In' },
-                { value: 'rounded-out', label: 'Rounded Out' },
-                { value: 'point-in', label: 'Point In' },
-                { value: 'point-out', label: 'Point Out' }
-              ]"
-              v-if="!isCorner"
-            />
+              <q-input
+                v-model="backgroundColor"
+                class="col-12"
+                label="Background Color"
+              >
+                <template v-slot:append>
+                  <q-icon name="colorize" class="cursor-pointer">
+                    <q-popup-proxy transition-show="scale" transition-hide="scale">
+                      <q-color v-model="backgroundColor" no-header no-footer />
+                    </q-popup-proxy>
+                  </q-icon>
+                </template>
+              </q-input>
 
-            <q-checkbox
-              v-model="full"
-              label="Full?"
-              class="q-pt-xs"
-              v-if="!isCorner"
-            />
+              <q-input
+                v-model="leafColor"
+                class="col-12"
+                label="Leaf Color"
+              >
+                <template v-slot:append>
+                  <q-icon name="colorize" class="cursor-pointer">
+                    <q-popup-proxy transition-show="scale" transition-hide="scale">
+                      <q-color v-model="leafColor" no-header no-footer />
+                    </q-popup-proxy>
+                  </q-icon>
+                </template>
+              </q-input>
+            </div>
+            <div class="row justify-around">
+              <q-select
+                label="Type"
+                class="col-xs-12"
+                v-model="type"
+                map-options
+                emit-value
+                :options="[
+                  { value: 'horizontal', label: 'Horizontal (Default)' },
+                  { value: 'vertical', label: 'Vertical' },
+                  { value: 'corner', label: 'Corner' }
+                ]"
+              />
 
-            <q-checkbox
-              v-model="glow"
-              label="Glow?"
-              class="q-pt-xs"
-            />
+              <q-select
+                label="Position"
+                class="col-xs-12"
+                v-model="position"
+                map-options
+                emit-value
+                :options="positionOptions"
+              />
 
-            <div class="col-xs-12" v-if="glow">
-              <div class="row justify-between">
-                <q-input
-                  v-model="glowSpeed"
-                  class="col-xs-12 col-sm-5"
-                  label="Glow Speed"
-                  type="number"
-                />
+              <q-select
+                label="Leaf Position"
+                class="col-xs-12"
+                v-model="leafPosition"
+                map-options
+                emit-value
+                :options="leafPositionOptions"
+                v-if="!isCorner"
+              />
 
-                <q-input
-                  v-model="glowIterationCount"
-                  class="col-xs-12 col-sm-5"
-                  label="Glow Count"
-                />
+              <q-select
+                label="Decoration"
+                class="col-xs-12"
+                v-model="decoration"
+                map-options
+                emit-value
+                :options="[
+                  { value: null, label: 'Default' },
+                  { value: 'rounded-in', label: 'Rounded In' },
+                  { value: 'rounded-out', label: 'Rounded Out' },
+                  { value: 'point-in', label: 'Point In' },
+                  { value: 'point-out', label: 'Point Out' }
+                ]"
+                v-if="!isCorner"
+              />
+
+              <q-checkbox
+                v-model="full"
+                label="Full?"
+                class="q-pt-xs"
+                v-if="!isCorner"
+              />
+
+              <q-checkbox
+                v-model="glow"
+                label="Glow?"
+                class="q-pt-xs"
+              />
+
+              <div class="col-xs-12" v-if="glow">
+                <div class="row justify-between">
+                  <q-input
+                    v-model="glowSpeed"
+                    class="col-xs-12 col-sm-5"
+                    label="Glow Speed"
+                    type="number"
+                  />
+
+                  <q-input
+                    v-model="glowIterationCount"
+                    class="col-xs-12 col-sm-5"
+                    label="Glow Count"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </q-card-section>
+        </q-card-section>
 
-      <q-separator />
+        <q-separator />
 
-      <q-card-section>
-        <q-input class="col-12" :value="componentOutput" ref="componentInput" type="textarea">
-          <template #prepend>
-            <q-icon name="file_copy" @click="copyComponentText" />
-          </template>
+        <q-card-section>
+          <q-input class="col-12" :value="componentOutput" ref="componentInput" type="textarea">
+            <template #prepend>
+              <q-icon name="file_copy" @click="copyComponentText" />
+            </template>
 
-          <template #append>
-            <q-icon name="refresh" @click="reset" />
-          </template>
-        </q-input>
-      </q-card-section>
-    </q-card>
-  </q-page>
+            <template #append>
+              <q-icon name="refresh" @click="reset" />
+            </template>
+          </q-input>
+        </q-card-section>
+      </q-card>
+    </div>
+    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+      <q-btn fab icon="keyboard_arrow_up" color="primary" />
+    </q-page-scroller>
+  </hero>
 </template>
 
-<style>
-</style>
-
 <script>
+import Hero from '../components/Hero'
+
 function initialState () {
   return {
     positionVal: 'left',
@@ -222,6 +226,10 @@ function initialState () {
 
 export default {
   name: 'InteractiveDemo',
+
+  components: {
+    Hero
+  },
 
   computed: {
     cssColorMode () {

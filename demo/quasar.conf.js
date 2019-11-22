@@ -1,26 +1,36 @@
 // Configuration for your app
 
+const path = require('path')
+
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
+      'qribbon',
+      'components'
     ],
 
     css: [
-      'app.styl'
+      'app.sass'
     ],
 
     extras: [
-      'roboto-font',
-      'material-icons' // optional, you are not bound to it
       // 'ionicons-v4',
       // 'mdi-v3',
-      // 'fontawesome-v5',
-      // 'eva-icons'
+      'fontawesome-v5',
+      // 'eva-icons',
+      // 'themify',
+      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
+
+      'roboto-font', // optional, you are not bound to it
+      'material-icons' // optional, you are not bound to it
     ],
 
     framework: {
+      // iconSet: 'ionicons-v4',
+      // lang: 'de', // Quasar language
+
       // all: true, // --- includes everything; for dev only!
 
       components: [
@@ -31,6 +41,7 @@ module.exports = function (ctx) {
         'QCheckbox',
         'QColor',
         'QDrawer',
+        'QExpansionItem',
         'QHeader',
         'QIcon',
         'QInput',
@@ -44,8 +55,14 @@ module.exports = function (ctx) {
         'QPageContainer',
         'QPageScroller',
         'QPopupProxy',
+        'QScrollArea',
         'QSelect',
         'QSeparator',
+        'QSpace',
+        'QTabs',
+        'QTab',
+        'QTabPanels',
+        'QTabPanel',
         'QToolbar',
         'QToolbarTitle'
       ],
@@ -60,9 +77,6 @@ module.exports = function (ctx) {
         'Notify',
         'Platform'
       ]
-
-      // iconSet: 'ionicons-v4'
-      // lang: 'de' // Quasar language
     },
 
     supportIE: true,
@@ -70,7 +84,7 @@ module.exports = function (ctx) {
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
-      publicPath: 'app-extension-qribbon',
+      publicPath: 'quasar-ui-qribbon',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
@@ -82,7 +96,16 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+      },
+
+      chainWebpack (chain) {
+        chain.resolve.alias.merge({
+          'ui': path.resolve(__dirname, '../ui/src/index.js'),
+          'api': path.resolve(__dirname, '../ui/dist/api/QRibbon.json'),
+          'sass': path.resolve(__dirname, '../ui/src/index.sass')
+        })
       }
+
     },
 
     devServer: {
@@ -92,7 +115,8 @@ module.exports = function (ctx) {
       watchOptions: {
         ignored: [
           'node_modules',
-          '!node_modules/@quasar/quasar-app-extension-qribbon'
+          '!node_modules/@quasar/quasar-app-extension-qribbon',
+          '!node_modules/@quasar/quasar-ui-qribbon'
         ]
       }
     },
