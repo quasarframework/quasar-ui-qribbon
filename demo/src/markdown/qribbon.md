@@ -7,12 +7,14 @@ QRibbon is a [Quasar App Extension](https://quasar.dev/app-extensions/introducti
 
 # Install
 To add this App Extension to your Quasar application, run the following (in your Quasar app folder):
+
 ```
 quasar ext add @quasar/qribbon
 ```
 
 # Uninstall
 To remove this App Extension from your Quasar application, run the following (in your Quasar app folder):
+
 ```
 quasar ext remove @quasar/qribbon
 ```

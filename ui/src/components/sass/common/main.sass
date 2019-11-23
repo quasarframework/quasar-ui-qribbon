@@ -1,0 +1,27 @@
+$qribbon-width          : 10px
+$qribbon-negative-width : -($qribbon-width)
+$qribbon-height         : 0px
+
+.qribbon__container
+  display: flex
+  &.inline
+    display: inline-flex
+
+.qribbon__container.right
+  justify-content: flex-end
+
+@mixin __qribbon__pseudo--before-after
+  width: $qribbon-width
+  height: $qribbon-height
+  bottom: $qribbon-negative-width
+  border-top: $qribbon-width solid var(--qribbon-leaf-color, black)
+  display: block
+  position: absolute
+  content: ""
+
+.q-toolbar
+  .qribbon__container
+    margin-left: -12px
+    // For full width toolbars
+    flex-grow: 1
+    margin-right: -12px
