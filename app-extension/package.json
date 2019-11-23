@@ -1,6 +1,6 @@
 {
   "name": "@quasar/quasar-app-extension-qribbon",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.11",
   "description": "QRibbon - Quasar App Extension",
   "author": "Allan Gaunt <allangaunt@gmail.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "corner"
   ],
   "dependencies": {
-    "@quasar/quasar-ui-qribbon": "1.0.0-beta.9"
+    "@quasar/quasar-ui-qribbon": "1.0.0-beta.11"
   },
   "engines": {
     "node": ">= 8.9.0",

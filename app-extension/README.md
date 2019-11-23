@@ -5,9 +5,12 @@
 [![npm](https://img.shields.io/npm/v/quasar-app-extension-qribbon.svg?label=quasar-app-extension-qribbon)](https://www.npmjs.com/package/quasar-app-extension-qribbon)
 [![npm](https://img.shields.io/npm/dt/quasar-app-extension-qribbon.svg)](https://www.npmjs.com/package/quasar-app-extension-qribbon)
 
+# Examples and Documentation for QRibbon UI Component
+Can be found [here](https://quasarframework.github.io/quasar-ui-qribbon)
+
 # Install
 ```bash
-quasar ext add qribbon
+quasar ext add @quasar/qribbon
 ```
 Quasar CLI will retrieve it from NPM and install the extension.
 
@@ -17,17 +20,11 @@ Quasar CLI will retrieve it from NPM and install the extension.
 
 # Uninstall
 ```bash
-quasar ext remove qribbon
+quasar ext remove @quasar/qribbon
 ```
 
-# Info
-> Add longer information here that will help the user of your app extension.
-
-# Other Info
-> Add other information that's not as important to know
-
 # Donate
-If you appreciate the work that went into this App Extension, please consider [donating to Quasar](https://donate.quasar.dev).
+If you appreciate the work that went into this, please consider donating to [Quasar](https://donate.quasar.dev) or [Allan](https://github.com/sponsors/webnoob).
 
 # License
-MIT (c) Jeff Galbraith <jeff.galbraith@xendra.com>
+MIT (c) Allan Gaunt <allan@quasar.dev>
