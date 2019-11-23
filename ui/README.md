@@ -19,8 +19,8 @@ Create and register a boot file:
 
 ```js
 import Vue from 'vue'
-import Plugin from 'quasar-ui-qribbon'
-import 'quasar-ui-qribbon/dist/index.css'
+import { QRibbon } from '@quasar/quasar-ui-qribbon'
+import '@quasar/quasar-ui-qribbon/dist/index.css'
 
 Vue.use(Plugin)
 ```
@@ -31,7 +31,7 @@ Vue.use(Plugin)
 <style src="quasar-ui-qribbon/dist/index.css"></style>
 
 <script>
-import { Component as QRibbon } from 'quasar-ui-qribbon'
+import { QRibbon } from 'quasar-ui-qribbon'
 
 export default {
   components: {
@@ -45,8 +45,8 @@ export default {
 
 ```js
 import Vue from 'vue'
-import Plugin from 'quasar-ui-qribbon'
-import 'quasar-ui-qribbon/dist/index.css'
+import { QRibbon } from '@quasar/quasar-ui-qribbon'
+import '@quasar/quasar-ui-qribbon/dist/index.css'
 
 Vue.use(Plugin)
 ```
@@ -57,7 +57,7 @@ Vue.use(Plugin)
 <style src="quasar-ui-qribbon/dist/index.css"></style>
 
 <script>
-import { Component as QRibbon } from 'quasar-ui-qribbon'
+import { QRibbon } from 'quasar-ui-qribbon'
 
 export default {
   components: {
