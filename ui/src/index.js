@@ -1,16 +1,16 @@
 import { version } from '../package.json'
-import Component from './components/QRibbon'
+import QRibbon from './components/QRibbon'
 
 export {
   version,
-  Component
+  QRibbon
 }
 
 export default {
   version,
-  Component,
+  QRibbon,
 
   install (Vue) {
-    Vue.component(Component.name, Component)
+    Vue.component(QRibbon.name, QRibbon)
   }
 }
