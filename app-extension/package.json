@@ -28,7 +28,7 @@
     "corner"
   ],
   "dependencies": {
-    "@quasar/quasar-ui-qribbon": "1.0.0-beta.1"
+    "@quasar/quasar-ui-qribbon": "1.0.0-beta.9"
   },
   "engines": {
     "node": ">= 8.9.0",
