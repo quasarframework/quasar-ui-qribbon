@@ -120,7 +120,7 @@ $ yarn build
 ```
 
 # Donate
-If you appreciate the work that went into this, please consider [donating to Quasar](https://donate.quasar.dev).
+If you appreciate the work that went into this, please consider donating to [Quasar](https://donate.quasar.dev) or [Allan](https://github.com/sponsors/webnoob).
 
 # License
-MIT (c) Jeff Galbraith <jeff.galbraith@xendra.com>
+MIT (c) Allan Gaunt <allan@quasar.dev>
