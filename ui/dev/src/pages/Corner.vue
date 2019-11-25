@@ -19,7 +19,6 @@
   .box-ribbon-wrapper {
     width: 90%;
     min-height: 400px;
-    background-color: #eee;
     margin: 0 auto;
     position: relative;
   }

@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/quasar-ui-qribbon.svg?label=quasar-ui-qribbon)](https://www.npmjs.com/package/quasar-ui-qribbon)
 [![npm](https://img.shields.io/npm/dt/quasar-ui-qribbon.svg)](https://www.npmjs.com/package/quasar-ui-qribbon)
 
-# Component QRibbon
-> Short description of the component
+# QRibbon
+Add Ribbons to your Quasar Apps
 
 
 # Usage

@@ -22,7 +22,6 @@
 
 <style lang="sass" scoped>
 .box-ribbon-wrapper
-  background-color: $grey-3
   margin: 0 auto
   position: relative
 
