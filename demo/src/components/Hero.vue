@@ -5,7 +5,7 @@
       <div class="text-h2 project-tagline">{{ tagline }}</div>
       <div class="byline">{{ byline }}<a :href="bylineTwitter" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></div>
       <div class="quasar">{{ quasarDesc }}</div>
-      <div class="donate"><a :href="donateUrl" target="_blank" title="Donate"><i class="fas fa-heart" style="color: red"></i></a></div>
+      <div class="donate"><a :href="donateUrl" target="_blank" title="Donate"><i class="fas fa-heart" style="color: white"></i></a></div>
       <q-btn type="a" :href="locationUrl" target="_blank" class="btn" label="View on GitHub" no-caps flat/>
       <q-btn to="/docs" class="btn" label="Docs" no-caps flat/>
       <q-btn to="/examples" class="btn" label="Examples" no-caps flat/>
