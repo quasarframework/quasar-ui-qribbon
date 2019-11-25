@@ -13,7 +13,6 @@ Auto shade the leaf by passing CSS color (e.g. #FF0000)
 
 <style lang="sass" scoped>
 .box-ribbon-wrapper
-  background-color: $grey-3
   margin: 0 auto
   position: relative
 </style>
