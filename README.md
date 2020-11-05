@@ -8,7 +8,7 @@ QRibbon (Vue Plugin, UMD and Quasar App Extension)
 
 # Structure
 
-* [/ui](ui) - standalone npm package
+* [/ui](ui) - standalone npm package (more information can be found here)
 * [/app-extension](app-extension) - Quasar app extension
 * [/demo](demo) - docs, demo and examples project
 * [live demo](https://quasarframework.github.io/quasar-ui-qribbon/docs) - live docs, demo and examples
