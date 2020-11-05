@@ -1,7 +1,7 @@
 # Component QRibbon
 
-[![npm](https://img.shields.io/npm/v/quasar-ui-qribbon.svg?label=quasar-ui-qribbon)](https://www.npmjs.com/package/quasar-ui-qribbon)
-[![npm](https://img.shields.io/npm/dt/quasar-ui-qribbon.svg)](https://www.npmjs.com/package/quasar-ui-qribbon)
+[![npm](https://img.shields.io/npm/v/@quasar/quasar-ui-qribbon.svg?label=quasar-ui-qribbon)](https://www.npmjs.com/package/@quasar/quasar-ui-qribbon)
+[![npm](https://img.shields.io/npm/dt/@quasar/quasar-ui-qribbon.svg)](https://www.npmjs.com/package/@quasar/quasar-ui-qribbon)
 
 # QRibbon
 Add Ribbons to your Quasar Apps
@@ -28,10 +28,10 @@ Vue.use(Plugin)
 **OR**:
 
 ```html
-<style src="quasar-ui-qribbon/dist/index.css"></style>
+<style src="@quasar/quasar-ui-qribbon/dist/index.css"></style>
 
 <script>
-import { QRibbon } from 'quasar-ui-qribbon'
+import { QRibbon } from '@quasar/quasar-ui-qribbon'
 
 export default {
   components: {
@@ -54,10 +54,10 @@ Vue.use(Plugin)
 **OR**:
 
 ```html
-<style src="quasar-ui-qribbon/dist/index.css"></style>
+<style src="@quasar/quasar-ui-qribbon/dist/index.css"></style>
 
 <script>
-import { QRibbon } from 'quasar-ui-qribbon'
+import { QRibbon } from '@quasar/quasar-ui-qribbon'
 
 export default {
   components: {
@@ -76,16 +76,16 @@ Add the following tag(s) after the Quasar ones:
 ```html
 <head>
   <!-- AFTER the Quasar stylesheet tags: -->
-  <link href="https://cdn.jsdelivr.net/npm/quasar-ui-qribbon/dist/index.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qribbon/dist/index.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <!-- at end of body, AFTER Quasar script(s): -->
-  <script src="https://cdn.jsdelivr.net/npm/quasar-ui-qribbon/dist/index.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qribbon/dist/index.umd.min.js"></script>
 </body>
 ```
 If you need the RTL variant of the CSS, then go for the following (instead of the above stylesheet link):
 ```html
-<link href="https://cdn.jsdelivr.net/npm/quasar-ui-qribbon/dist/index.rtl.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qribbon/dist/index.rtl.min.css" rel="stylesheet" type="text/css">
 ```
 
 # Setup
