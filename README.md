@@ -1,3 +1,5 @@
+> It's likely this App Extension will be deprecated (no support for Quasar v2/Vue 3) unless it gets a strong representation from developers using it.
+
 QRibbon (Vue Plugin, UMD and Quasar App Extension)
 ===
 
