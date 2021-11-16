@@ -1,5 +1,5 @@
 // Utils
-import slot from 'quasar/src/utils/slot.js'
+import { slot } from 'quasar/src/utils/slot.js'
 
 // Mixins
 import QRibbonColorize from '../mixins/colorize'

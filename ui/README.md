@@ -1,6 +1,6 @@
 # Component QRibbon
 
-[![npm](https://img.shields.io/npm/v/@quasar/quasar-ui-qribbon.svg?label=quasar-ui-qribbon)](https://www.npmjs.com/package/@quasar/quasar-ui-qribbon)
+[![npm](https://img.shields.io/npm/v/@quasar/quasar-ui-qribbon.svg?label=@quasar/quasar-ui-qribbon)](https://www.npmjs.com/package/@quasar/quasar-ui-qribbon)
 [![npm](https://img.shields.io/npm/dt/@quasar/quasar-ui-qribbon.svg)](https://www.npmjs.com/package/@quasar/quasar-ui-qribbon)
 
 # QRibbon
